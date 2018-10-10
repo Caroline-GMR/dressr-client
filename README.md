@@ -148,8 +148,8 @@ ____________________________________________________
 [Trello board](https://trello.com/b/Us78PYyT/dressrhttps://trello.com)
 
 ### Git
-[Client repository Link](https://github.com/MJHRhacker/dressr)
-[Server repository Link](http://github.com)
+[Client repository Link](https://github.com/MJHRhacker/dressr-client)
+[Server repository Link](http://github.com/MJHRhacker/dressr-server)
 
 [Deploy Link](http://heroku.com)
 
