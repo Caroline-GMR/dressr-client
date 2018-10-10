@@ -11,7 +11,7 @@ Get to the back of your drawer without making a mess. Rotate your closet and nev
 -  **Login:** As a user I can login to the platform so that I can access my virtual closet
 -  **Logout:** As a user I can logout from the platform so no one else can use it
 -  **Add clothing** As a user I can add a piece of clothing to my virtual closet
--  **List my closet** As a user I want to see all my clothes in my virtual closet so that I can get inspired
+-  **List my clothes** As a user I want to see all my clothes in my virtual closet so that I can get inspired
 -  **Search clothes** As a user I want to search clothes by category (pants, tops, coats, jackets, shoes)
 
 ## Backlog
@@ -32,7 +32,7 @@ Get to the back of your drawer without making a mess. Rotate your closet and nev
 - /auth/signup - Signup form
 - /auth/login - Login form
 - /profile/me - my personal details and favorite
-- /closet - clothes list
+- /clothes - clothes list
 - /clothes/create - create an outfit
 - /clothes/:id -  clothes detail card with tags/categories and pic
 - 404
@@ -92,7 +92,7 @@ favorites - [ObjectID<outfits>]
 Clothes model
 
 ```
-picture - ObjectID<clothes> // required
+picture - String // required
 category - String // required
 Style - String // required
 Date - Date.now
@@ -102,7 +102,7 @@ Date - Date.now
 Outfit model
 
 ```
-picture - ObjectID<clothes> // required
+picture - String // required
 Style - String // required
 Notes - String
 Date - Date.now
@@ -126,7 +126,7 @@ Date - Date.now
 - POST /profile/me
   - body:
     - User details
-- GET /closet
+- GET /clothes
 - POST /clothes
   - body:
     - picture
