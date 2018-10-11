@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Output, EventEmitter } from '@angular/core'
 
 import { AuthService } from '../../services/auth.service';
 
@@ -15,6 +16,7 @@ export class SignupComponent implements OnInit {
   processing = false;
   username: string;
   password: string;
+  @Output() switch = new EventEmitter<any>();
 
   constructor(
     private authService: AuthService,
@@ -43,6 +45,10 @@ export class SignupComponent implements OnInit {
           this.feedbackEnabled = false;
         });
     }
+  }
+
+  handleSwitch() {
+    this.switch.emit(event);
   }
 }
 

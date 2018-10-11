@@ -11,9 +11,9 @@
 <a class="fake-btn" href="#">Facebook</a>
 
 <div *ngIf="isLogin">
-  <app-login></app-login>
+  <app-login (switch)="handleSignupClick($event)"></app-login>
 </div>
 
 <div *ngIf="isSignup">
-  <app-signup></app-signup>
+  <app-signup  (switch)="handleLoginClick($event)"></app-signup>
 </div>

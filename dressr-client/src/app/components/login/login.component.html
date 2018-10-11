@@ -11,7 +11,7 @@
   </div>
 
   <div [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
-    <input class="field" placeholder="password" type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="6" [disabled]="processing"/>
+    <input class="field" placeholder="password" type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="6" [disabled]="processing"/>
     <div class="error-container">
       <ng-container *ngIf="feedbackEnabled && passwordField.errors">
         <p *ngIf="passwordField.errors.required" class="validation">password required</p>
@@ -30,4 +30,5 @@
       <p *ngSwitchCase="'not-found'" class="validaton">Username or password are incorrect</p>
       <p *ngSwitchDefault class="validaton">There was an error, please <a (click)="submitForm(form)">try again</a></p>
     </div>
-</form>
+  </form>
+  <p class="switch">Or create your account <a (click)="handleSwitch()">Sign Up</a></p>

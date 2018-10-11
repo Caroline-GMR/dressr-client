@@ -14,7 +14,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleLoginClick() {
+  handleLoginClick(event) {
     this.isLogin = true;
     this.isSignup = false;
   }
