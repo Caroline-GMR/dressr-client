@@ -1,0 +1,46 @@
+/* Landing */
+
+.hero {
+  text-align: center;
+  img { 
+    width: 250px;
+  }
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  .login {
+    padding-right: 20px; 
+    font-size: 20px; 
+  }
+  .signup {
+    padding-left: 20px;  
+    font-size: 20px; 
+  }
+  hr {
+    height: 25px;
+    margin: 0;
+  }
+  &.true {
+    font-weight: 500;
+  }
+
+  &.false {
+    font-weight: 500;
+  }
+}
+
+.fake-btn {
+  background-color: #3B579D;
+  border: 1px solid #3B579D;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  margin: 40px 30px;
+}

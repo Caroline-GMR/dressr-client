@@ -1,0 +1,41 @@
+/*.field {
+  display: block;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  width: 70%;
+} */
+
+.form {
+  margin: 30px;
+}
+
+.field {
+  padding: 15px 20px;
+  font-size: 16px;
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.field::placeholder {
+  color: #a3a3a3;
+}
+
+.submit {
+  background-color: #48B984;
+  border: 1px solid #48B984;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 30px;
+  display: block;
+  text-align: center;
+  button {
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600; 
+  }
+}

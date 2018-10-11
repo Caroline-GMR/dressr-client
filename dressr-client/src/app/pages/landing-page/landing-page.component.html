@@ -1,8 +1,14 @@
-<img src="../../../assets/images/dressr logo.png" alt="dressr-logo">
-<a (click)="handleLoginClick()">Login</a>
-<a (click)="handleSignupClick()">Sign Up</a>
+<div class="hero">
+  <img src="../../../assets/images/dressr logo.png" alt="dressr-logo">
+</div>
 
-<a href="#">Facebook</a>
+<div class="auth">
+  <a class="login" (click)="handleLoginClick()" [ngClass]="{'isLogin': login}">Login</a>
+  <hr>
+  <a class="signup" (click)="handleSignupClick()" [ngClass]="{'isSignup': signup}">Sign Up</a>
+</div>
+
+<a class="fake-btn" href="#">Facebook</a>
 
 <div *ngIf="isLogin">
   <app-login></app-login>
