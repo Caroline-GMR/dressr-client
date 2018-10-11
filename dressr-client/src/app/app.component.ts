@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Output, EventEmitter } from '@angular/core'
 
 import { AuthService } from './services/auth.service';
 
@@ -13,6 +14,8 @@ export class AppComponent implements OnInit {
   anon: boolean;
   user: any;
 
+  @Output() home = new EventEmitter<any>();
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -20,7 +23,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUser();
-  
     this.authService.userChange$.subscribe((user) => {
       this.loading = false;
       this.user = user;
@@ -31,5 +33,9 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout()
       .then(() => this.router.navigate(['/']));
+  }
+
+  handleHome() {
+    this.home.emit(event);
   }
 }
