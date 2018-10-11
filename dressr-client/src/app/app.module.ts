@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 // ---- Guards ---- //
 
@@ -22,6 +23,7 @@ import { SignupComponent } from './components/signup/signup.component';
 // ---- Routes ---- //
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
+  { path: 'profile', component: ProfilePageComponent },
   /* { path: 'login',  component: MovieListComponent },
   { path: 'signup', component: MovieDetailComponent } */
 ];
@@ -31,7 +33,8 @@ const routes: Routes = [
     AppComponent,
     LandingPageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,

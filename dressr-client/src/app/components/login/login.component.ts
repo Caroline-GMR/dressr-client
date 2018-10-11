@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   error = null;
   processing = false;
   username: string;
+  email: string;
   password: string;
   @Output() switch = new EventEmitter<any>();
 
@@ -32,11 +33,12 @@ export class LoginComponent implements OnInit {
       this.processing = true;
       const data = {
         username: this.username,
+        email: this.email,
         password: this.password
       };
       this.authService.login(data)
         .then(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/profile']);
         })
         .catch((err) => {
           this.error = err.error.code || 'unexpected'; // :-)
