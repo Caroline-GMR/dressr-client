@@ -3,9 +3,9 @@
 </div>
 
 <div class="auth">
-  <a class="login" (click)="handleLoginClick()" [ngClass]="{'isLogin': login}">Login</a>
-  <hr>
-  <a class="signup" (click)="handleSignupClick()" [ngClass]="{'isSignup': signup}">Sign Up</a>
+  <a class="link" (click)="handleLoginClick()" [ngClass]="{'active': isLogin}">Login</a>
+  <p>|</p>
+  <a class="link" (click)="handleSignupClick()" [ngClass]="{'active': isSignup}">Sign Up</a>
 </div>
 
 <a class="fake-btn" href="#">Facebook</a>

@@ -2,36 +2,42 @@
 
   <div [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
     <input class="field" placeholder="username" type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="6" [disabled]="processing"/>
-    <div *ngIf="feedbackEnabled && usernameField.errors">
-      <p *ngIf="usernameField.errors.required" class="validation">username required</p>
-      <p *ngIf="usernameField.errors.minlength" class="validation">username is too short</p>
+    <div class="error-container">
+      <ng-container *ngIf="feedbackEnabled && usernameField.errors">
+        <p *ngIf="usernameField.errors.required" class="validation">username required</p>
+        <p *ngIf="usernameField.errors.minlength" class="validation">username is too short</p>
+      </ng-container>
     </div>
   </div>
 
   <div [ngClass]="{'has-error': feedbackEnabled && emailField.errors}">
     <input class="field" placeholder="email" type="text" name="email" [(ngModel)]="email" #emailField="ngModel" required minlength="6" [disabled]="processing"/>
-    <div *ngIf="feedbackEnabled && emailField.errors">
-      <p *ngIf="emailField.errors.required" class="validation">email required</p>
-      <p *ngIf="emailField.errors.minlength" class="validation">email is too short</p>
+    <div class="error-container">
+      <ng-container *ngIf="feedbackEnabled && emailField.errors">
+        <p *ngIf="emailField.errors.required" class="validation">email required</p>
+        <p *ngIf="emailField.errors.minlength" class="validation">email is too short</p>
+      </ng-container>
     </div>
   </div>
 
   <div [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
     <input class="field"  placeholder="password" type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="6" [disabled]="processing"/>
-    <div *ngIf="feedbackEnabled && passwordField.errors">
-      <p *ngIf="passwordField.errors.required" class="validation">password required</p>
-      <p *ngIf="passwordField.errors.minlength" class="validation">password is too short</p>
+    <div class="error-container">
+      <ng-container *ngIf="feedbackEnabled && passwordField.errors">
+        <p *ngIf="passwordField.errors.required" class="validation">password required</p>
+        <p *ngIf="passwordField.errors.minlength" class="validation">password is too short</p>
+      </ng-container>
     </div>
   </div>
 
   <div class="submit">
-    <button type="submit" [disabled]="processing">Start</button>
-    <div *ngIf="feedbackEnabled && form.invalid">
-      <p class="validation">There are errors in the form, please review the fields</p>
-    </div>
-    <div *ngIf="error" [ngSwitch]="error">
-      <p *ngSwitchCase="'not-found'" class="validaton">Username or password are incorrect</p>
-      <p *ngSwitchDefault class="validaton">There was an error, please <a (click)="submitForm(form)">try again</a></p>
-    </div>
+    <button name="button" type="submit" [disabled]="processing">Start</button>
+  </div>
+  <div *ngIf="feedbackEnabled && form.invalid">
+    <p class="validation">There are errors in the form, please review the fields</p>
+  </div>
+  <div *ngIf="error" [ngSwitch]="error">
+    <p *ngSwitchCase="'not-found'" class="validaton">Username or password are incorrect</p>
+    <p *ngSwitchDefault class="validaton">There was an error, please <a (click)="submitForm(form)">try again</a></p>
   </div>
 </form>
