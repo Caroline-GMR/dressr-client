@@ -3,7 +3,7 @@
 </div>
 
 <div class="auth">
-  <a class="link" (click)="handleLoginClick()" [ngClass]="{'active': isLogin}">Login</a>
+  <a class="link" (click)="handleLoginClick($event)" [ngClass]="{'active': isLogin}">Login</a>
   <p>|</p>
   <a class="link" (click)="handleSignupClick()" [ngClass]="{'active': isSignup}">Sign Up</a>
 </div>
