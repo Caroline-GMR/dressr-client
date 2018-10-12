@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
       };
       this.authService.login(data)
         .then(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/profile']);
         })
         .catch((err) => {
           this.error = err.error.code || 'unexpected'; // :-)
