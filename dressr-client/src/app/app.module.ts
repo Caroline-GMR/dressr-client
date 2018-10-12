@@ -16,14 +16,17 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 // ---- Guards ---- //
+import { RequireAnonGuard } from '../app/guards/require-anon.guard';
+import { RequireUserGuard } from '../app/guards/require-user.guard';
+import { InitAuthGuard } from '../app/guards/init-auth.guard';
 
 // ---- Services ---- //
 
 
 // ---- Routes ---- //
 const routes: Routes = [
-  { path: '', component: LandingPageComponent },
-  { path: 'profile', component: ProfilePageComponent },
+  { path: '', component: LandingPageComponent, canActivate: [ InitAuthGuard ] },
+  { path: 'profile', component: ProfilePageComponent, canActivate: [ RequireUserGuard ] },
   /* { path: 'login',  component: MovieListComponent },
   { path: 'signup', component: MovieDetailComponent } */
 ];
@@ -43,7 +46,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    InitAuthGuard,
+    RequireAnonGuard,
+    RequireUserGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
