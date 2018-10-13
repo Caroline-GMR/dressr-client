@@ -1,4 +1,5 @@
-<form>
+<form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
 <div class="field">
   <label>Picture</label>
   <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
@@ -112,6 +113,6 @@
         <label for="music">lazy</label>
       </div>
     </fieldset>
-
-    <a class="submit" [routerLink]="['/clothes/:id']">Add</a>
+    
+  <button name="button" class="submit" type="submit">Add</button>
 </form>

@@ -45,3 +45,4 @@ export class AddItemPageComponent implements OnInit {
     this.uploader.uploadAll();
   }
 }
+
