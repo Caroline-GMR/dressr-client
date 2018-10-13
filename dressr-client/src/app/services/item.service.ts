@@ -16,4 +16,21 @@ export class ItemService {
     return this.httpClient.get(this.baseUrl, options)
       .toPromise();
   }
+
+  submitItem(item) {
+    const options = {
+      withCredentials: true
+    };
+    console.log(item)
+    return this.httpClient.post(this.baseUrl, item, options)
+    .toPromise();
+  }
+
+  getOne(id: string): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/${id}`, options)
+      .toPromise();
+  }
 }

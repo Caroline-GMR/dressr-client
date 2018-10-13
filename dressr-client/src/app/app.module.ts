@@ -17,6 +17,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ItemCategoryComponent } from './components/item-category/item-category.component';
 import { AddItemPageComponent } from './pages/add-item-page/add-item-page.component';
+import { ItemDetailsPageComponent } from './pages/item-details-page/item-details-page.component';
 
 // ---- Guards ---- //
 import { RequireAnonGuard } from '../app/guards/require-anon.guard';
@@ -30,7 +31,8 @@ import { InitAuthGuard } from '../app/guards/init-auth.guard';
 const routes: Routes = [
   { path: '', component: LandingPageComponent, canActivate: [ InitAuthGuard ] },
   { path: 'profile', component: ProfilePageComponent, canActivate: [ RequireUserGuard ] },
-  { path: 'clothes/create',  component: AddItemPageComponent, canActivate: [ RequireUserGuard ]  }
+  { path: 'clothes/create',  component: AddItemPageComponent, canActivate: [ RequireUserGuard ]  },
+  { path: 'clothes/:id',  component: ItemDetailsPageComponent, canActivate: [ RequireUserGuard ]  }
   /* { path: 'login',  component: MovieListComponent },
   { path: 'signup', component: MovieDetailComponent } */
 ];
@@ -43,7 +45,8 @@ const routes: Routes = [
     SignupComponent,
     ProfilePageComponent,
     ItemCategoryComponent,
-    AddItemPageComponent
+    AddItemPageComponent,
+    ItemDetailsPageComponent
   ],
   imports: [
     BrowserModule,
