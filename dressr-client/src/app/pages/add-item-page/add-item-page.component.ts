@@ -43,6 +43,7 @@ export class AddItemPageComponent implements OnInit {
       this.itemService.getOne(params.id)
         .then((result) => {
           this.items = result;
+          console.log
         })
         .catch((error) => {
           console.log(error);

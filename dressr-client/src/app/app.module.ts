@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FileUploadModule } from 'ng2-file-upload';
 
 
-
 // ---- Components ---- //
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

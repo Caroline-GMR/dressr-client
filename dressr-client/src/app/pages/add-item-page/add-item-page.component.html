@@ -2,115 +2,115 @@
 
 <div class="field">
   <label>Picture</label>
-  <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+  <input id="picture" [(ngModel)]="picture" #pictureField="ngModel" type="file" name="file" ng2FileSelect [uploader]="uploader" />
 </div>
 
 <fieldset>
   <legend>Tops</legend>
   <div>
-    <input type="checkbox" id="coding" name="interest[]" value="coding">
-    <label for="coding">dress</label>
+    <input  id="dress" type="checkbox" [(ngModel)]="dress" #dressField="ngModel" name="dress" value="dress">
+    <label for="dress">dress</label>
   </div>
   <div>
-    <input type="checkbox" id="music" name="interest[]" value="music">
-    <label for="music">t-shirt</label>
+    <input  id="tshirt" type="checkbox" [(ngModel)]="t-shirt" #tshirtField="ngModel" name="tshirt" value="tshirt">
+    <label for="tshirt">t-shirt</label>
   </div>
   <div>
-      <input type="checkbox" id="music" name="interest[]" value="music">
-      <label for="music">jacket</label>
+      <input  id="jacket" type="checkbox" [(ngModel)]="jacket" #jacketField="ngModel" name="jacket" value="jacket">
+      <label for="jacket">jacket</label>
     </div>
   <div>
-      <input type="checkbox" id="music" name="interest[]" value="music">
-      <label for="music">hoodie</label>
+      <input  id="hoodie" type="checkbox" [(ngModel)]="hoodie" #hoddieField="ngModel" name="hoodie" value="hoodie">
+      <label for="hoodie">hoodie</label>
     </div>
   <div>
-    <input type="checkbox" id="music" name="interest[]" value="music">
-    <label for="music">blouse</label>
+    <input  id="blouse" type="checkbox" [(ngModel)]="blouse" #blouseField="ngModel" name="blouse" value="blouse">
+    <label for="blouse">blouse</label>
   </div>
   <div>
-    <input type="checkbox" id="music" name="interest[]" value="music">
-    <label for="music">jersey</label>
+    <input id="jersey" type="checkbox" [(ngModel)]="jersey" #jerseyField="ngModel" name="jersey" value="jersey">
+    <label for="jersey">jersey</label>
   </div>
 </fieldset>
  <fieldset>
     <legend>Bottoms</legend>
     <div>
-      <input type="checkbox" id="coding" name="interest[]" value="coding">
-      <label for="coding">jeans</label>
+      <input type="checkbox" id="jeans" [(ngModel)]="jeans" #jeansField="ngModel" name="jeans" value="jeans">
+      <label for="jeans">jeans</label>
     </div>
     <div>
-      <input type="checkbox" id="music" name="interest[]" value="music">
-      <label for="music">skirt</label>
+      <input type="checkbox" id="skirt" [(ngModel)]="skirt" #skirtField="ngModel" name="skirt" value="skirt">
+      <label for="skirt">skirt</label>
     </div>
     <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">shorts</label>
+        <input type="checkbox" id="shorts" [(ngModel)]="shorts" #shortsField="ngModel" name="shorts" value="shorts">
+        <label for="shorts">shorts</label>
       </div>
     <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">leggings</label>
+        <input type="checkbox" id="leggings" [(ngModel)]="leggings" #leggingsField="ngModel" name="leggings" value="leggings">
+        <label for="leggings">leggings</label>
       </div>
     <div>
-      <input type="checkbox" id="music" name="interest[]" value="music">
-      <label for="music">pants</label>
+      <input type="checkbox" id="pants" [(ngModel)]="pants" #pantsField="ngModel"  name="pants" value="pants">
+      <label for="pants">pants</label>
     </div>
     <div>
-      <input type="checkbox" id="music" name="interest[]" value="music">
-      <label for="music">sweatpants</label>
+      <input type="checkbox" id="sweatpants" [(ngModel)]="sweatpants" #sweatpantsField="ngModel"  name="sweatpants" value="sweatpants">
+      <label for="sweatpants">sweatpants</label>
     </div>
   </fieldset>
    <fieldset>
       <legend>Footwear</legend>
       <div>
-        <input type="checkbox" id="coding" name="interest[]" value="coding">
-        <label for="coding">sneakers</label>
+        <input type="checkbox" id="sneakers" [(ngModel)]="sneakers" #sneakersField="ngModel"  name="sneakers" value="sneakers">
+        <label for="sneakers">sneakers</label>
       </div>
       <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">sandals</label>
+        <input type="checkbox" id="sandals" [(ngModel)]="sandals" #sandalsField="ngModel"  name="sandals" value="sandals">
+        <label for="sandals">sandals</label>
       </div>
       <div>
-          <input type="checkbox" id="music" name="interest[]" value="music">
-          <label for="music">boots</label>
+          <input type="checkbox" id="boots" [(ngModel)]="boots" #bootsField="ngModel"  name="boots" value="boots">
+          <label for="boots">boots</label>
         </div>
       <div>
-          <input type="checkbox" id="music" name="interest[]" value="music">
-          <label for="music">loafers</label>
+          <input type="checkbox" id="loafers" [(ngModel)]="loafers" #loafersField="ngModel"  name="loafers" value="loafers">
+          <label for="loafers">loafers</label>
         </div>
       <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">high heels</label>
+        <input type="checkbox" id="highheels" [(ngModel)]="highheels" #highheelsField="ngModel"  name="highheels" value="highheels">
+        <label for="highheels">high heels</label>
       </div>
       <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">ballerinas</label>
+        <input type="checkbox" id="ballerinas" [(ngModel)]="ballerinas" #ballerinasField="ngModel" name="ballerinas" value="ballerinas">
+        <label for="ballerinas">ballerinas</label>
       </div>
     </fieldset>
     <fieldset>
       <legend>Style</legend>
       <div>
-        <input type="checkbox" id="coding" name="interest[]" value="coding">
-        <label for="coding">casual</label>
+        <input type="checkbox" id="casual" [(ngModel)]="casual" #casualField="ngModel"  name="casual" value="casual">
+        <label for="casual">casual</label>
       </div>
       <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">formal</label>
+        <input type="checkbox" id="formal" [(ngModel)]="formal" #formalField="ngModel"  name="formal" value="formal">
+        <label for="formal">formal</label>
       </div>
       <div>
-          <input type="checkbox" id="music" name="interest[]" value="music">
-          <label for="music">sports</label>
+          <input type="checkbox" id="sports" [(ngModel)]="sports" #sportsField="ngModel" name="sports" value="sports">
+          <label for="sports">sports</label>
         </div>
       <div>
-          <input type="checkbox" id="music" name="interest[]" value="music">
-          <label for="music">party</label>
+          <input type="checkbox" id="party" [(ngModel)]="party" #partyField="ngModel"  name="party" value="party">
+          <label for="party">party</label>
         </div>
       <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">beach</label>
+        <input type="checkbox" id="beach" [(ngModel)]="beach" #beachField="ngModel"  name="beach" value="beach">
+        <label for="beach">beach</label>
       </div>
       <div>
-        <input type="checkbox" id="music" name="interest[]" value="music">
-        <label for="music">lazy</label>
+        <input type="checkbox" id="lazy" [(ngModel)]="lazy" #lazyField="ngModel"  name="lazy" value="lazy">
+        <label for="lazy">lazy</label>
       </div>
     </fieldset>
     
