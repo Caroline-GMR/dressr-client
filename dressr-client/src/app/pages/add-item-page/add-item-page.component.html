@@ -1,11 +1,15 @@
 <form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
-<div class="field">
+<!-- <div class="field">
   <label>Picture</label>
   <input id="picture" [(ngModel)]="picture" #pictureField="ngModel" type="file" name="file" ng2FileSelect [uploader]="uploader" />
 </div>
 
-<fieldset>
+<div>
+  <input class="field" type="text" name="category" [(ngModel)]="category" #usernameField="ngModel" required minlength="3" [disabled]="processing"/>
+</div> -->
+
+<!-- <fieldset>
   <legend>Tops</legend>
   <div>
     <input  id="dress" type="checkbox" [(ngModel)]="dress" #dressField="ngModel" name="dress" value="dress">
@@ -86,7 +90,7 @@
         <label for="ballerinas">ballerinas</label>
       </div>
     </fieldset>
-    <fieldset>
+  <fieldset> 
       <legend>Style</legend>
       <div>
         <input type="checkbox" id="casual" [(ngModel)]="casual" #casualField="ngModel"  name="casual" value="casual">
@@ -110,6 +114,35 @@
       </div>
       <div>
         <input type="checkbox" id="lazy" [(ngModel)]="lazy" #lazyField="ngModel"  name="lazy" value="lazy">
+        <label for="lazy">lazy</label>
+      </div>
+    </fieldset>
+  
+  -->
+    <fieldset> 
+      <legend>Style</legend>
+      <div>
+        <input type="checkbox" id="casual" [checked]="casual === 'Y'" (change)="casual = $event.target.checked ? 'Y' : 'N'" name="casual" value="casual">
+        <label for="casual">casual</label>
+      </div>
+      <div>
+        <input type="checkbox" id="formal" [checked]="formal === 'Y'" (change)="formal = $event.target.checked ? 'Y' : 'N'" name="formal" value="formal">
+        <label for="formal">formal</label>
+      </div>
+      <div>
+          <input type="checkbox" id="sports" [checked]="sports === 'Y'" (change)="sports = $event.target.checked ? 'Y' : 'N'" name="sports" value="sports">
+          <label for="sports">sports</label>
+        </div>
+      <div>
+          <input type="checkbox" id="party" [checked]="party === 'Y'" (change)="party = $event.target.checked ? 'Y' : 'N'" name="party" value="party">
+          <label for="party">party</label>
+        </div>
+      <div>
+        <input type="checkbox" id="beach" [checked]="beach === 'Y'" (change)="beach = $event.target.checked ? 'Y' : 'N'"  name="beach" value="beach">
+        <label for="beach">beach</label>
+      </div>
+      <div>
+        <input type="checkbox" id="lazy" [checked]="lazy === 'Y'" (change)="lazy = $event.target.checked ? 'Y' : 'N'"  name="lazy" value="lazy">
         <label for="lazy">lazy</label>
       </div>
     </fieldset>

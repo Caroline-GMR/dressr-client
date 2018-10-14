@@ -14,6 +14,12 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./add-item-page.component.scss']
 })
 export class AddItemPageComponent implements OnInit {
+  casual: String = "Y";
+  formal: String = "Y";
+  sports: String = "Y";
+  party: String = "Y";
+  beach: String = "Y";
+  lazy: String = "Y";
 
   uploader: FileUploader = new FileUploader({
     url: 'http://localhost:3000/item'
@@ -43,7 +49,7 @@ export class AddItemPageComponent implements OnInit {
       this.itemService.getOne(params.id)
         .then((result) => {
           this.items = result;
-          console.log
+          console.log(result)
         })
         .catch((error) => {
           console.log(error);
@@ -64,6 +70,11 @@ export class AddItemPageComponent implements OnInit {
   }
 
   submitForm(form) {
+    console.log(form);
+    const input = req.body.input;
+    if (input === 'casual' || 'formal' || 'sports' || 'party' || 'beach' || 'lazy') {
+      this.input = this.style;
+    };
     if (form.valid) {
       this.uploader.onBuildItemForm = (item, form2) => {
         form2.append('category', this.category);
@@ -73,6 +84,8 @@ export class AddItemPageComponent implements OnInit {
           description: this.description,
           style: this.style
         };
+        console.log(form);
+        console.log(this.category)
         this.itemService.submitItem(data)
         .then(() => {
           this.router.navigate(['/clothes/:id']);
