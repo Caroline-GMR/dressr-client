@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 
 import { ItemService } from '../../services/item.service';
 import { AuthService } from '../../services/auth.service';
+import { formatNumber } from '../../../../node_modules/@angular/common';
 
 
 
@@ -14,12 +15,9 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./add-item-page.component.scss']
 })
 export class AddItemPageComponent implements OnInit {
-  casual: String = "Y";
-  formal: String = "Y";
-  sports: String = "Y";
-  party: String = "Y";
-  beach: String = "Y";
-  lazy: String = "Y";
+  isTop = true;
+  isBottom = false;
+  isFootwear = false;
 
   uploader: FileUploader = new FileUploader({
     url: 'http://localhost:3000/item'
@@ -33,9 +31,9 @@ export class AddItemPageComponent implements OnInit {
   items: any;
   picture: string;
   category: any;
-  description: string;
+  subcategory: string;
   style: string;
-  tshirt: string;
+  top: string;
 
   constructor(
     private itemService: ItemService,
@@ -70,8 +68,43 @@ export class AddItemPageComponent implements OnInit {
     };
   }
 
+  setCategoryTop(event) {
+    this.isTop = true;
+    this.isBottom = false;
+    this.isFootwear = false;
+
+    if(this.isTop){
+      this.category = "tops"
+    }
+
+  } 
+
+  setCategoryBottom() {
+    this.isTop = false;
+    this.isBottom = true;
+    this.isFootwear = false;
+
+
+    if(this.isBottom){
+      this.category = "bottoms"
+    }
+  } 
+
+  setCategoryFootwear() {
+    this.isTop = false;
+    this.isBottom = false;
+    this.isFootwear = true;
+
+
+    if(this.isFootwear){
+      this.category = "footwear"
+    }
+
+  } 
+
   submitForm(form) {
-    console.log(this.tshirt);
+    console.log(this.category);
+    console.log(form.value);
     // const input = req.body.input;
     // if (input === 'casual' || 'formal' || 'sports' || 'party' || 'beach' || 'lazy') {
     //   this.input = this.style;
@@ -82,7 +115,7 @@ export class AddItemPageComponent implements OnInit {
         const data = {
           picture: this.picture,
           category: this.category,
-          description: this.description,
+          subcategory: this.subcategory,
           style: this.style
         };
         console.log(form);
