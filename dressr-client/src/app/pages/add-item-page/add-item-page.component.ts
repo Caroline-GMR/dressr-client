@@ -35,6 +35,7 @@ export class AddItemPageComponent implements OnInit {
   category: any;
   description: string;
   style: string;
+  tshirt: string;
 
   constructor(
     private itemService: ItemService,
@@ -70,11 +71,11 @@ export class AddItemPageComponent implements OnInit {
   }
 
   submitForm(form) {
-    console.log(form);
-    const input = req.body.input;
-    if (input === 'casual' || 'formal' || 'sports' || 'party' || 'beach' || 'lazy') {
-      this.input = this.style;
-    };
+    console.log(this.tshirt);
+    // const input = req.body.input;
+    // if (input === 'casual' || 'formal' || 'sports' || 'party' || 'beach' || 'lazy') {
+    //   this.input = this.style;
+    // };
     if (form.valid) {
       this.uploader.onBuildItemForm = (item, form2) => {
         form2.append('category', this.category);
