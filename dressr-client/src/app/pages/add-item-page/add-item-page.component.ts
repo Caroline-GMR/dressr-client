@@ -34,6 +34,7 @@ export class AddItemPageComponent implements OnInit {
   subcategory: string;
   style: string;
   top: string;
+  item: any;
 
   constructor(
     private itemService: ItemService,
@@ -43,19 +44,6 @@ export class AddItemPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params
-    .subscribe((params) => {
-      this.itemService.getOne(params.id)
-        .then((result) => {
-          this.items = result;
-          console.log(result)
-        })
-        .catch((error) => {
-          console.log(error);
-          this.error = true;
-        })
-    })
-
     this.uploader.onSuccessItem = (item, response) => {
       this.itemService.getAll()
       .then((results) => {
@@ -103,33 +91,32 @@ export class AddItemPageComponent implements OnInit {
   } 
 
   submitForm(form) {
-    console.log(this.category);
-    console.log(form.value);
-    // const input = req.body.input;
-    // if (input === 'casual' || 'formal' || 'sports' || 'party' || 'beach' || 'lazy') {
-    //   this.input = this.style;
-    // };
     if (form.valid) {
       this.uploader.onBuildItemForm = (item, form2) => {
         form2.append('category', this.category);
-        const data = {
-          picture: this.picture,
-          category: this.category,
-          subcategory: this.subcategory,
-          style: this.style
-        };
-        console.log(form);
-        console.log(this.category)
-        this.itemService.submitItem(data)
-        .then(() => {
-          this.router.navigate(['/clothes/:id']);
-        })
-        .catch((err) => {
-          this.error = err.error.code || 'unexpected'; // :-)
-          this.processing = false;
-          this.feedbackEnabled = false;
-        });
+        form2.append('subcategory', this.subcategory);
+        form2.append('style', this.style);
+        // const data = {
+        //   category: this.category,
+        //   subcategory: this.subcategory,
+        //   style: this.style
+        // };
+        // this.itemService.submitItem(data)
+        // .then((result) => {
+        //   console.log(result);
+        //   this.item = result;
+        //   this.router.navigate(['/clothes', this.item._id]);
+        // })
+        // .catch((err) => {
+        //   this.error = err.error.code || 'unexpected'; // :-)
+        //   this.processing = false;
+        //   this.feedbackEnabled = false;
+        // });
       }
+      this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
+        this.item = JSON.parse(response);
+        this.router.navigate(['/clothes', this.item._id]);
+    };
       this.uploader.uploadAll();
     }
   }

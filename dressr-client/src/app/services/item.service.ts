@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ItemService {
   private baseUrl = 'http://localhost:3000/item';
+  private item: any;
 
   constructor( private httpClient: HttpClient) { }
 
@@ -17,12 +18,11 @@ export class ItemService {
       .toPromise();
   }
 
-  submitItem(item) {
+  submitItem(data) {
     const options = {
       withCredentials: true
     };
-    console.log(item)
-    return this.httpClient.post(this.baseUrl, item, options)
+    return this.httpClient.post(this.baseUrl, data, options)
     .toPromise();
   }
 
@@ -33,4 +33,8 @@ export class ItemService {
     return this.httpClient.get(`${this.baseUrl}/${id}`, options)
       .toPromise();
   }
+  getItem(): any {
+    return this.item;
+  }
+
 }
