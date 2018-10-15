@@ -33,6 +33,7 @@ export class ItemService {
     return this.httpClient.get(`${this.baseUrl}/${id}`, options)
       .toPromise();
   }
+  
   getItem(): any {
     return this.item;
   }

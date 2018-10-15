@@ -1,0 +1,30 @@
+<div class="icon-indicator">
+  <img src="/src/assets/images/wardrobe.png" alt="">
+</div>
+
+<div class="category">
+  <p>Tops</p>
+  <div class="item-category" *ngFor="let item of items">
+    <div class="item-card" *ngIf="item.category === 'tops'">
+     <a [routerLink]="['/clothes', item._id]"><img src="{{item.picture}}" alt="item-picture"></a>
+    </div>
+  </div>
+</div>
+
+<div class="category">
+  <p>Bottoms</p>
+  <div class="item-category" *ngFor="let item of items">
+    <div class="item-card" *ngIf="item.category === 'bottoms'">
+      <a [routerLink]="['/clothes', item._id]"><img src="{{item.picture}}" alt="item-picture"></a>
+    </div>
+  </div>
+</div>
+
+<div class="category">
+  <p>Footwear</p>
+  <div class="item-category" *ngFor="let item of items">
+    <div class="item-card" *ngIf="item.category === 'footwear'">
+      <a [routerLink]="['/clothes', item._id]"><img src="{{item.picture}}" alt="item-picture"></a>
+    </div>
+  </div>
+</div>
