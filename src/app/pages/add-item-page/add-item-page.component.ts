@@ -105,9 +105,13 @@ export class AddItemPageComponent implements OnInit {
   }
 
   submitForm(form) {
+
+    console.log(this.category)
+    console.log(this.subcategory)
+    console.log(this.style)
     this.error = '';
     this.feedbackEnabled = true;
-    if (form.valid) {
+    if (form.valid && this.preview) {
       this.uploader.onBuildItemForm = (item, form2) => {
         form2.append('category', this.category);
         form2.append('subcategory', this.subcategory);
@@ -115,16 +119,10 @@ export class AddItemPageComponent implements OnInit {
       }
       this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
         this.item = JSON.parse(response)
-        .then(() => {
-          this.router.navigate(['/clothes', this.item._id]);
-        })
-        .catch((err) => {
-          this.error = err.error.code || 'unexpected'; // :-)
-          this.processing = false;
-          this.feedbackEnabled = false;
-        });
-    };
+        this.router.navigate(['/clothes', this.item._id]);
+      }; 
       this.uploader.uploadAll();
+      this.processing = true;
     }
   }
 }

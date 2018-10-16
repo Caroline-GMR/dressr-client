@@ -71,7 +71,7 @@ header {
   margin: 0 auto;
 }
 
-/* Navbar */
+/* Profile */
 
 .profile-box {
   background-color: #a3a3a33b;
@@ -108,6 +108,7 @@ header {
   .menu-icon {
     border: 1px solid #a3a3a3;
     border-radius: 10px;
+    text-align: center;
     img {
       padding: 10px;
     }
@@ -143,10 +144,12 @@ header {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     justify-items: left;
-    padding-right: 95px;
     font-size: 20px;
     .category {
       font-weight: 900;
+    }
+    .pipe {
+      padding: 0 10px;
     }
   }
   p {

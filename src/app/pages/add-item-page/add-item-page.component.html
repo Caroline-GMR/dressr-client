@@ -4,19 +4,18 @@
 
 <div class="add-item-form">
   
-  <div class="picture-field" [ngClass]="{'has-error': feedbackEnabled && pictureField.errors}">
+  <div class="picture-field">
     <img *ngIf="!preview" class="placeholder" src="/src/assets/images/clothes-placeholder.png" alt="">
     <img class="camera" src="https://image.flaticon.com/icons/svg/159/159829.svg" alt="">
-    <input id="picture" type="file" name="file" ng2FileSelect [uploader]="uploader" (change)="handleFileUpload($event)"/>
+    <input id="picture" type="file" name="file" ng2FileSelect [uploader]="uploader" (change)="handleFileUpload($event)" [disabled]="processing" />
     <img *ngIf="preview && localUrl" [src]="localUrl" class="imgPlaceholder">
     <div class="error-container">
-      <ng-container *ngIf="feedbackEnabled && pictureField.errors">
-        <p *ngIf="pictureField.errors.required" class="validation">Picture required</p>
-      </ng-container>
+      <p class="validation" *ngIf="feedbackEnabled && !preview">File required</p>
     </div>
   </div>
+
   <h3>Category</h3>
-  <div class="navigation">
+  <div class="navigation" role="navigation">
     <p class="link" (click)="setCategoryTop()" [ngClass]="{'active': isTop}">Tops</p>
     <p>|</p>
     <p class="link" (click)="setCategoryBottom()" [ngClass]="{'active': isBottom}">Bottom</p>
@@ -25,32 +24,33 @@
   </div>
   
   <form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-    <div class="form-container" [ngClass]="{'has-error': feedbackEnabled && categoryField.errors}">
+    <!-- @todo later: figure out how to build these radio buttons with a loop -->
+    <div class="form-container" [ngClass]="{'has-error': feedbackEnabled && !subcategory}">
       
       <!-- // tops // -->
       <div class="radio-form" *ngIf="isTop" (click)="setCategoryTop($event)">
         <div class="radio-btn">
-          <input  id="dress" type="radio" [(ngModel)]="subcategory" #dressField="ngModel" name="tops" value="dress">
+          <input  id="dress" type="radio" [(ngModel)]="subcategory" name="subcategory" value="dress" [disabled]="processing" required />
           <label for="dress">dress</label>
         </div>
         <div class="radio-btn">
-          <input  id="tshirt" type="radio" [(ngModel)]="subcategory" #tshirtField="ngModel" name="tops" value="tshirt">
+          <input  id="tshirt" type="radio" [(ngModel)]="subcategory" name="subcategory" value="tshirt" [disabled]="processing" required />
           <label for="tshirt">t-shirt</label>
         </div>
         <div class="radio-btn">
-          <input  id="jacket" type="radio" [(ngModel)]="subcategory" #jacketField="ngModel" name="tops" value="jacket">
+          <input  id="jacket" type="radio" [(ngModel)]="subcategory" name="subcategory" value="jacket" [disabled]="processing" required />
           <label for="jacket">jacket</label>
         </div>
         <div class="radio-btn">
-          <input  id="hoodie" type="radio" [(ngModel)]="subcategory" #hoddieField="ngModel" name="tops" value="hoodie">
+          <input  id="hoodie" type="radio" [(ngModel)]="subcategory" name="subcategory" value="hoodie" [disabled]="processing" required />
           <label for="hoodie">hoodie</label>
         </div>
         <div class="radio-btn">
-          <input  id="blouse" type="radio" [(ngModel)]="subcategory" #blouseField="ngModel" name="tops" value="blouse">
+          <input  id="blouse" type="radio" [(ngModel)]="subcategory" name="subcategory" value="blouse" [disabled]="processing" required />
           <label for="blouse">blouse</label>
         </div>
         <div class="radio-btn">
-          <input id="jersey" type="radio" [(ngModel)]="subcategory" #jerseyField="ngModel" name="tops" value="jersey">
+          <input id="jersey" type="radio" [(ngModel)]="subcategory" name="subcategory" value="jersey" [disabled]="processing" required />
           <label for="jersey">jersey</label>
         </div>
       </div>
@@ -58,27 +58,27 @@
       <!-- // bottoms // -->
       <div class="radio-form"  *ngIf="isBottom" (click)="setCategoryBottom($event)">
         <div class="radio-btn">
-          <input type="radio" id="jeans" [(ngModel)]="subcategory" #jeansField="ngModel" name="bottoms" value="jeans">
+          <input type="radio" id="jeans" [(ngModel)]="subcategory" name="subcategory" value="jeans" [disabled]="processing" required />
           <label for="jeans">jeans</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="skirt" [(ngModel)]="subcategory" #skirtField="ngModel" name="bottoms" value="skirt">
+          <input type="radio" id="skirt" [(ngModel)]="subcategory" name="subcategory" value="skirt" [disabled]="processing" required />
           <label for="skirt">skirt</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="shorts" [(ngModel)]="subcategory" #shortsField="ngModel" name="bottoms" value="shorts">
+          <input type="radio" id="shorts" [(ngModel)]="subcategory" name="subcategory" value="shorts" [disabled]="processing" required />
           <label for="shorts">shorts</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="leggings" [(ngModel)]="subcategory" #leggingsField="ngModel" name="bottoms" value="leggings">
+          <input type="radio" id="leggings" [(ngModel)]="subcategory" name="subcategory" value="leggings" [disabled]="processing" required />
           <label for="leggings">leggings</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="pants" [(ngModel)]="subcategory" #pantsField="ngModel"  name="bottoms" value="pants">
+          <input type="radio" id="pants" [(ngModel)]="subcategory"  name="subcategory" value="pants" [disabled]="processing" required />
           <label for="pants">pants</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="sweatpants" [(ngModel)]="subcategory" #sweatpantsField="ngModel"  name="bottoms" value="sweatpants">
+          <input type="radio" id="sweatpants" [(ngModel)]="subcategory"  name="subcategory" value="sweatpants" [disabled]="processing" required />
           <label for="sweatpants">sweatpants</label>
         </div>
       </div>
@@ -86,72 +86,68 @@
       <!-- // footwear // -->
       <div class="radio-form"  *ngIf="isFootwear" (click)="setCategoryFootwear($event)">
         <div class="radio-btn">
-          <input type="radio" id="sneakers" [(ngModel)]="subcategory" #sneakersField="ngModel"  name="footwear" value="sneakers">
+          <input type="radio" id="sneakers" [(ngModel)]="subcategory"  name="subcategory" value="sneakers" [disabled]="processing" required />
           <label for="sneakers">sneakers</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="sandals" [(ngModel)]="subcategory" #sandalsField="ngModel"  name="footwear" value="sandals">
+          <input type="radio" id="sandals" [(ngModel)]="subcategory"  name="subcategory" value="sandals" [disabled]="processing" required />
           <label for="sandals">sandals</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="boots" [(ngModel)]="subcategory" #bootsField="ngModel"  name="footwear" value="boots">
+          <input type="radio" id="boots" [(ngModel)]="subcategory"  name="subcategory" value="boots" [disabled]="processing" required />
           <label for="boots">boots</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="loafers" [(ngModel)]="subcategory" #loafersField="ngModel"  name="footwear" value="loafers">
+          <input type="radio" id="loafers" [(ngModel)]="subcategory"  name="subcategory" value="loafers" [disabled]="processing" required />
           <label for="loafers">loafers</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="highheels" [(ngModel)]="subcategory" #highheelsField="ngModel"  name="footwear" value="highheels">
+          <input type="radio" id="highheels" [(ngModel)]="subcategory"  name="subcategory" value="highheels" [disabled]="processing" required />
           <label for="highheels">high heels</label>
         </div>
         <div class="radio-btn">
-          <input type="radio" id="ballerinas" [(ngModel)]="subcategory" #ballerinasField="ngModel" name="footwear" value="ballerinas">
+          <input type="radio" id="ballerinas" [(ngModel)]="subcategory" name="subcategory" value="ballerinas" [disabled]="processing" required />
           <label for="ballerinas">ballerinas</label>
         </div>
       </div> 
       <div class="error-container">
-        <ng-container *ngIf="feedbackEnabled && categoryField.errors">
-          <p *ngIf="categoryField.errors.required" class="validation">Category required</p>
-        </ng-container>
+        <p class="validation" *ngIf="feedbackEnabled && !subcategory">Category required</p>
       </div>
     </div>
 
-  <h3>Style</h3>
-  <div class="radio-form"  [ngClass]="{'has-error': feedbackEnabled && styleField.errors}">
-    <div class="radio-btn">
-      <input type="radio" id="casual" [(ngModel)]="style" #casualField="ngModel"  name="style" value="casual">
-      <label for="casual">casual</label>
-    </div>
-    <div class="radio-btn">
-      <input type="radio" id="formal" [(ngModel)]="style" #formalField="ngModel"  name="style" value="formal">
-      <label for="formal">formal</label>
-    </div>
-    <div class="radio-btn">
-      <input type="radio" id="sports" [(ngModel)]="style" #sportsField="ngModel" name="style" value="sports">
-      <label for="sports">sports</label>
-    </div>
-    <div class="radio-btn">
-      <input type="radio" id="party" [(ngModel)]="style" #partyField="ngModel"  name="style" value="party">
-      <label for="party">party</label>
-    </div>
-    <div class="radio-btn">
-      <input type="radio" id="beach" [(ngModel)]="style" #beachField="ngModel"  name="style" value="beach">
-      <label for="beach">beach</label>
-    </div>
-    <div class="radio-btn">
-      <input type="radio" id="lazy" [(ngModel)]="style" #lazyField="ngModel"  name="style" value="lazy">
-      <label for="lazy">lazy</label>
-    </div>
-    <div class="error-container">
-      <ng-container *ngIf="feedbackEnabled && styleField.errors">
-        <p *ngIf="styleField.errors.required" class="validation">Style required</p>
-      </ng-container>
+    <h3>Style</h3>
+    <div class="radio-form"  [ngClass]="{'has-error': feedbackEnabled && !style}">
+      <div class="radio-btn">
+        <input type="radio" id="casual" [(ngModel)]="style" name="style" value="casual" [disabled]="processing" required />
+        <label for="casual">casual</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" id="formal" [(ngModel)]="style" name="style" value="formal" [disabled]="processing" required />
+        <label for="formal">formal</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" id="sports" [(ngModel)]="style"name="style" value="sports" [disabled]="processing" required />
+        <label for="sports">sports</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" id="party" [(ngModel)]="style" name="style" value="party" [disabled]="processing" required />
+        <label for="party">party</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" id="beach" [(ngModel)]="style" name="style" value="beach" [disabled]="processing" required />
+        <label for="beach">beach</label>
+      </div>
+      <div class="radio-btn">
+        <input type="radio" id="lazy" [(ngModel)]="style" name="style" value="lazy" [disabled]="processing" required />
+        <label for="lazy">lazy</label>
+      </div>
+      <div class="error-container">
+        <p class='validation' *ngIf="feedbackEnabled && !style">Style required</p>
       </div> 
-  </div>
-  <div class="submit">
-    <button name="button" type="submit">Add</button>
-  </div>
+    </div>
+    <div class="submit">
+      <button name="button" type="submit" [disabled]="processing">Add</button>
+    </div>
   </form>
   
 </div>
