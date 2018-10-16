@@ -1,14 +1,19 @@
-<div>
-  <img src="{{item.picture}}" alt="">
+<div class="clothes-details">
+  <div>
+    <img class="item-details" src="{{item.picture}}" alt="">
+  </div>
+  
+  <h2>Category</h2>
+  <div class="category-display">
+    <p class="category">{{item.category | titlecase}} </p> 
+    <p> | </p>
+    <p>{{item.subcategory | titlecase}}</p>
+  </div>
+  
+  <div>
+    <h2>Style</h2>
+    <p>{{item.style | titlecase}}</p>
+  </div>
 </div>
 
-<div>
-  <h3>Category</h3>
-  <p>{{item.category}} | {{item.subcategory}}</p>
-</div>
-
-<div>
-  <h3>Style</h3>
-  <p>{{item.style}}</p>
-</div>
 

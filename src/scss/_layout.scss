@@ -127,6 +127,29 @@ header {
   display: flex;
   justify-content: space-around;
   margin: -10px 30px -15px 30px;
-  
 }
 
+/* item-detail-page */
+
+.clothes-details {
+  margin: 0 30px;
+  .item-details {
+    width: 230px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .category-display {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: left;
+    padding-right: 95px;
+    font-size: 20px;
+    .category {
+      font-weight: 900;
+    }
+  }
+  p {
+    font-size: 20px;
+  }
+}
