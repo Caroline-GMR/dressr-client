@@ -18,6 +18,7 @@ export class AddItemPageComponent implements OnInit {
   isTop = true;
   isBottom = false;
   isFootwear = false;
+  localUrl: Array<any>;
 
   uploader: FileUploader = new FileUploader({
     url: 'http://localhost:3000/item'
@@ -48,7 +49,8 @@ export class AddItemPageComponent implements OnInit {
       this.itemService.getAll()
       .then((results) => {
         this.items = results;
-      });
+      })
+      .catch(error => console.log(error))
     };
 
     this.uploader.onErrorItem = (item, response, status, headers) => {
@@ -87,35 +89,37 @@ export class AddItemPageComponent implements OnInit {
     if(this.isFootwear){
       this.category = "footwear"
     }
+  }
 
-  } 
+  handleFileUpload(event) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+          this.localUrl = event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
 
   submitForm(form) {
+    this.error = '';
+    this.feedbackEnabled = true;
     if (form.valid) {
       this.uploader.onBuildItemForm = (item, form2) => {
         form2.append('category', this.category);
         form2.append('subcategory', this.subcategory);
         form2.append('style', this.style);
-        // const data = {
-        //   category: this.category,
-        //   subcategory: this.subcategory,
-        //   style: this.style
-        // };
-        // this.itemService.submitItem(data)
-        // .then((result) => {
-        //   console.log(result);
-        //   this.item = result;
-        //   this.router.navigate(['/clothes', this.item._id]);
-        // })
-        // .catch((err) => {
-        //   this.error = err.error.code || 'unexpected'; // :-)
-        //   this.processing = false;
-        //   this.feedbackEnabled = false;
-        // });
       }
       this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
-        this.item = JSON.parse(response);
-        this.router.navigate(['/clothes', this.item._id]);
+        this.item = JSON.parse(response)
+        .then(() => {
+          this.router.navigate(['/clothes', this.item._id]);
+        })
+        .catch((err) => {
+          this.error = err.error.code || 'unexpected'; // :-)
+          this.processing = false;
+          this.feedbackEnabled = false;
+        });
     };
       this.uploader.uploadAll();
     }

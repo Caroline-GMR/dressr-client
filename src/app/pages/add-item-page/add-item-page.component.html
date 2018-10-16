@@ -1,0 +1,154 @@
+<div class="icon-indicator">
+  <img src="/src/assets/images/clothes.png" alt="">
+</div>
+
+<div >
+  
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && pictureField.errors}">
+    <label>Picture</label>
+    <input id="picture" type="file" name="file" ng2FileSelect [uploader]="uploader" (change)="handleFileUpload($event)"/>
+    <img [src]="localUrl" *ngIf="localUrl" class="imgPlaceholder">
+    <div class="error-container">
+      <ng-container *ngIf="feedbackEnabled && pictureField.errors">
+        <p *ngIf="pictureField.errors.required" class="validation">Picture required</p>
+      </ng-container>
+    </div>
+  </div>
+  
+  <div class="navigation">
+    <p class="link" (click)="setCategoryTop()">Tops</p>
+    <p class="link" (click)="setCategoryBottom()">Bottom</p>
+    <p class="link" (click)="setCategoryFootwear()">Footwear</p>
+  </div>
+  
+  <form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+    <div [ngClass]="{'has-error': feedbackEnabled && categoryField.errors}">
+      
+      <!-- // tops // -->
+      <div *ngIf="isTop" (click)="setCategoryTop($event)">
+        <div>
+          <input  id="dress" type="radio" [(ngModel)]="subcategory" #dressField="ngModel" name="tops" value="dress">
+          <label for="dress">dress</label>
+        </div>
+        <div>
+          <input  id="tshirt" type="radio" [(ngModel)]="subcategory" #tshirtField="ngModel" name="tops" value="tshirt">
+          <label for="tshirt">t-shirt</label>
+        </div>
+        <div>
+          <input  id="jacket" type="radio" [(ngModel)]="subcategory" #jacketField="ngModel" name="tops" value="jacket">
+          <label for="jacket">jacket</label>
+        </div>
+        <div>
+          <input  id="hoodie" type="radio" [(ngModel)]="subcategory" #hoddieField="ngModel" name="tops" value="hoodie">
+          <label for="hoodie">hoodie</label>
+        </div>
+        <div>
+          <input  id="blouse" type="radio" [(ngModel)]="subcategory" #blouseField="ngModel" name="tops" value="blouse">
+          <label for="blouse">blouse</label>
+        </div>
+        <div>
+          <input id="jersey" type="radio" [(ngModel)]="subcategory" #jerseyField="ngModel" name="tops" value="jersey">
+          <label for="jersey">jersey</label>
+        </div>
+      </div>
+
+      <!-- // bottoms // -->
+      <div *ngIf="isBottom" (click)="setCategoryBottom($event)">
+        <div>
+          <input type="radio" id="jeans" [(ngModel)]="subcategory" #jeansField="ngModel" name="bottoms" value="jeans">
+          <label for="jeans">jeans</label>
+        </div>
+        <div>
+          <input type="radio" id="skirt" [(ngModel)]="subcategory" #skirtField="ngModel" name="bottoms" value="skirt">
+          <label for="skirt">skirt</label>
+        </div>
+        <div>
+          <input type="radio" id="shorts" [(ngModel)]="subcategory" #shortsField="ngModel" name="bottoms" value="shorts">
+          <label for="shorts">shorts</label>
+        </div>
+        <div>
+          <input type="radio" id="leggings" [(ngModel)]="subcategory" #leggingsField="ngModel" name="bottoms" value="leggings">
+          <label for="leggings">leggings</label>
+        </div>
+        <div>
+          <input type="radio" id="pants" [(ngModel)]="subcategory" #pantsField="ngModel"  name="bottoms" value="pants">
+          <label for="pants">pants</label>
+        </div>
+        <div>
+          <input type="radio" id="sweatpants" [(ngModel)]="subcategory" #sweatpantsField="ngModel"  name="bottoms" value="sweatpants">
+          <label for="sweatpants">sweatpants</label>
+        </div>
+      </div>
+
+      <!-- // footwear // -->
+      <div *ngIf="isFootwear" (click)="setCategoryFootwear($event)">
+        <div>
+          <input type="radio" id="sneakers" [(ngModel)]="subcategory" #sneakersField="ngModel"  name="footwear" value="sneakers">
+          <label for="sneakers">sneakers</label>
+        </div>
+        <div>
+          <input type="radio" id="sandals" [(ngModel)]="subcategory" #sandalsField="ngModel"  name="footwear" value="sandals">
+          <label for="sandals">sandals</label>
+        </div>
+        <div>
+          <input type="radio" id="boots" [(ngModel)]="subcategory" #bootsField="ngModel"  name="footwear" value="boots">
+          <label for="boots">boots</label>
+        </div>
+        <div>
+          <input type="radio" id="loafers" [(ngModel)]="subcategory" #loafersField="ngModel"  name="footwear" value="loafers">
+          <label for="loafers">loafers</label>
+        </div>
+        <div>
+          <input type="radio" id="highheels" [(ngModel)]="subcategory" #highheelsField="ngModel"  name="footwear" value="highheels">
+          <label for="highheels">high heels</label>
+        </div>
+        <div>
+          <input type="radio" id="ballerinas" [(ngModel)]="subcategory" #ballerinasField="ngModel" name="footwear" value="ballerinas">
+          <label for="ballerinas">ballerinas</label>
+        </div>
+      </div> 
+      <div class="error-container">
+        <ng-container *ngIf="feedbackEnabled && categoryField.errors">
+          <p *ngIf="categoryField.errors.required" class="validation">Category required</p>
+        </ng-container>
+      </div>
+    </div>
+
+  <p>Style</p>
+  <div [ngClass]="{'has-error': feedbackEnabled && styleField.errors}">
+    <div>
+      <input type="radio" id="casual" [(ngModel)]="style" #casualField="ngModel"  name="style" value="casual">
+      <label for="casual">casual</label>
+    </div>
+    <div>
+      <input type="radio" id="formal" [(ngModel)]="style" #formalField="ngModel"  name="style" value="formal">
+      <label for="formal">formal</label>
+    </div>
+    <div>
+      <input type="radio" id="sports" [(ngModel)]="style" #sportsField="ngModel" name="style" value="sports">
+      <label for="sports">sports</label>
+    </div>
+    <div>
+      <input type="radio" id="party" [(ngModel)]="style" #partyField="ngModel"  name="style" value="party">
+      <label for="party">party</label>
+    </div>
+    <div>
+      <input type="radio" id="beach" [(ngModel)]="style" #beachField="ngModel"  name="style" value="beach">
+      <label for="beach">beach</label>
+    </div>
+    <div>
+      <input type="radio" id="lazy" [(ngModel)]="style" #lazyField="ngModel"  name="style" value="lazy">
+      <label for="lazy">lazy</label>
+    </div>
+    <div class="error-container">
+      <ng-container *ngIf="feedbackEnabled && styleField.errors">
+        <p *ngIf="styleField.errors.required" class="validation">Style required</p>
+      </ng-container>
+      </div> 
+  </div>
+  <button name="button" class="submit" type="submit">Add</button>
+  </form>
+  
+</div>
+
+  

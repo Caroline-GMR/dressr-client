@@ -15,16 +15,15 @@ export class ClosetPageComponent implements OnInit {
   
   ngOnInit() {
     this.itemService.getAll()
-    .then((results) => {
-      this.items = [];
-      for(let ix=0; ix < results.length; ix++) {
-        if (results[ix].category === 'tops')
-        this.items.push(results[ix])
-        if (results[ix].category === 'bottoms')
-        this.items.push(results[ix])
-        if (results[ix].category === 'footwear')
-        this.items.push(results[ix])
-      }
+    .then((results: Array<any>) => {
+      console.log(results.length)
+      this.items = results;
+
+      // for(let ix=0; ix < results.length; ix++) {
+      //   if (results[ix].category === 'tops') this.items.push(results[ix])   
+      //   if (results[ix].category === 'bottoms') this.items.push(results[ix])
+      //   if (results[ix].category === 'footwear') this.items.push(results[ix])
+      // }
       console.log(this.items);
     })
   }

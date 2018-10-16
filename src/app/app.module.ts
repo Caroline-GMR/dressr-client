@@ -6,30 +6,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FileUploadModule } from 'ng2-file-upload';
 
+// ---- Pages ---- //
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { AddItemPageComponent } from './pages/add-item-page/add-item-page.component';
+import { ItemDetailsPageComponent } from './pages/item-details-page/item-details-page.component';
+import { ClosetPageComponent } from './pages/closet-page/closet-page.component';
 
 // ---- Components ---- //
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ItemCategoryComponent } from './components/item-category/item-category.component';
-import { AddItemPageComponent } from './pages/add-item-page/add-item-page.component';
-import { ItemDetailsPageComponent } from './pages/item-details-page/item-details-page.component';
-import { ClosetPageComponent } from './pages/closet-page/closet-page.component';
 
 // ---- Guards ---- //
 import { RequireAnonGuard } from '../app/guards/require-anon.guard';
 import { RequireUserGuard } from '../app/guards/require-user.guard';
 import { InitAuthGuard } from '../app/guards/init-auth.guard';
 
-// ---- Services ---- //
-
-
 // ---- Routes ---- //
 const routes: Routes = [
-  { path: '', component: LandingPageComponent, canActivate: [ InitAuthGuard ] },
+  { path: '', component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'profile', component: ProfilePageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'clothes/create',  component: AddItemPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'clothes/:id',  component: ItemDetailsPageComponent, canActivate: [ RequireUserGuard ]  },
