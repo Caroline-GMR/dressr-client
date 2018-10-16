@@ -19,6 +19,7 @@ export class AddItemPageComponent implements OnInit {
   isBottom = false;
   isFootwear = false;
   localUrl: Array<any>;
+  preview = false;
 
   uploader: FileUploader = new FileUploader({
     url: 'http://localhost:3000/item'
@@ -97,7 +98,9 @@ export class AddItemPageComponent implements OnInit {
       reader.onload = (event: any) => {
           this.localUrl = event.target.result;
       }
+      this.preview = true;
       reader.readAsDataURL(event.target.files[0]);
+
     }
   }
 
