@@ -25,7 +25,8 @@ export class OutfitPreviewPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+    this.outfit = this.outfitPreview.getOutfit();
+    console.log(this.outfit)
   }
 
   showDetail(id) {

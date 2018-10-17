@@ -46,7 +46,6 @@ export class ClosetPageComponent implements OnInit {
 
   selectedItem(item) {
     this.outfit = this.outfitPreview.setOne(item);
-    console.log(this.outfit);
   }
 
   showOutfitPreview(outfit) {
