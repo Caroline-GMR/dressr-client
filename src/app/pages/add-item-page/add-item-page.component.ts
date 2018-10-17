@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from "@angular/router";
+import {Location} from '@angular/common'
+
 
 import { ItemService } from '../../services/item.service';
 import { AuthService } from '../../services/auth.service';
@@ -42,7 +44,9 @@ export class AddItemPageComponent implements OnInit {
     private itemService: ItemService,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _location: Location
+
   ) {}
 
   ngOnInit() {
@@ -120,5 +124,9 @@ export class AddItemPageComponent implements OnInit {
       this.uploader.uploadAll();
       this.processing = true;
     }
+  }
+
+  backClicked() {
+    this._location.back();
   }
 }

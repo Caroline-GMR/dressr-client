@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from "@angular/router";
+import {Location} from '@angular/common'
 
 @Component({
   selector: 'app-item-details-page',
@@ -17,7 +18,8 @@ export class ItemDetailsPageComponent implements OnInit {
   constructor(
     private itemService: ItemService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _location: Location
 
   ) { }
   ngOnInit() {
@@ -34,4 +36,7 @@ export class ItemDetailsPageComponent implements OnInit {
     })
   }
 
+  backClicked() {
+    this._location.back();
+  }
 }

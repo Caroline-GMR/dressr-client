@@ -1,3 +1,4 @@
+<img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
 <div class="icon-indicator">
   <img src="/src/assets/images/wardrobe.png" alt="">
 </div>
@@ -5,8 +6,8 @@
 <div class="category">
   <p>Tops</p>
   <swiper [config]="config">
-    <div class="item-category" *ngFor="let item of items">
-      <div class="item-card" *ngIf="item.category === 'tops'">
+    <div class="item-category" *ngFor="let item of tops">
+      <div class="item-card">
       <a class="item-card-link" (dblclick)="showDetail(item._id)" [style.background-image]="'url(' + item.picture + ')'"></a>
       </div>
     </div>
@@ -16,8 +17,8 @@
 <div class="category">
   <p>Bottoms</p>
   <swiper [config]="config">
-    <div class="item-category" *ngFor="let item of items">
-      <div class="item-card"  *ngIf="item.category === 'bottoms'">
+    <div class="item-category" *ngFor="let item of bottoms">
+      <div class="item-card">
         <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
       </div>
     </div>
@@ -27,8 +28,8 @@
 <div class="category">
   <p>Footwear</p>
   <swiper [config]="config">
-    <div class="item-category" *ngFor="let item of items">
-      <div class="item-card" *ngIf="item.category === 'footwear'">
+    <div class="item-category" *ngFor="let item of footwear">
+      <div class="item-card">
         <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
       </div>
     </div>
