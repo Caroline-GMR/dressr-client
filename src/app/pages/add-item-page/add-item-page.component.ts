@@ -105,10 +105,6 @@ export class AddItemPageComponent implements OnInit {
   }
 
   submitForm(form) {
-
-    console.log(this.category)
-    console.log(this.subcategory)
-    console.log(this.style)
     this.error = '';
     this.feedbackEnabled = true;
     if (form.valid && this.preview) {

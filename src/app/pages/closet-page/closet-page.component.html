@@ -4,27 +4,35 @@
 
 <div class="category">
   <p>Tops</p>
-  <div class="item-category" *ngFor="let item of items">
-    <div class="item-card" *ngIf="item.category === 'tops'">
-     <a [routerLink]="['/clothes', item._id]"><img src="{{item.picture}}" alt="item-picture"></a>
+  <swiper [config]="config">
+    <div class="item-category" *ngFor="let item of items">
+      <div class="item-card" *ngIf="item.category === 'tops'">
+      <a class="item-card-link" (dblclick)="showDetail(item._id)" [style.background-image]="'url(' + item.picture + ')'"></a>
+      </div>
     </div>
-  </div>
+  </swiper>
 </div>
 
 <div class="category">
   <p>Bottoms</p>
-  <div class="item-category" *ngFor="let item of items">
-    <div class="item-card" *ngIf="item.category === 'bottoms'">
-      <a [routerLink]="['/clothes', item._id]"><img src="{{item.picture}}" alt="item-picture"></a>
+  <swiper [config]="config">
+    <div class="item-category" *ngFor="let item of items">
+      <div class="item-card"  *ngIf="item.category === 'bottoms'">
+        <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+      </div>
     </div>
-  </div>
+  </swiper>
 </div>
 
 <div class="category">
   <p>Footwear</p>
-  <div class="item-category" *ngFor="let item of items">
-    <div class="item-card" *ngIf="item.category === 'footwear'">
-      <a [routerLink]="['/clothes', item._id]"><img src="{{item.picture}}" alt="item-picture"></a>
+  <swiper [config]="config">
+    <div class="item-category" *ngFor="let item of items">
+      <div class="item-card" *ngIf="item.category === 'footwear'">
+        <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+      </div>
     </div>
-  </div>
+  </swiper>
 </div>
+
+

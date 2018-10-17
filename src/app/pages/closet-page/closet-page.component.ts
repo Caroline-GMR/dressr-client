@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-closet-page',
@@ -8,23 +9,22 @@ import { ItemService } from '../../services/item.service';
 })
 export class ClosetPageComponent implements OnInit {
   items: any;
+  config: any;
 
   constructor(
-    private itemService: ItemService
+    private itemService: ItemService,
+    private router: Router
   ) { }
   
   ngOnInit() {
     this.itemService.getAll()
     .then((results: Array<any>) => {
-      console.log(results.length)
       this.items = results;
-
-      // for(let ix=0; ix < results.length; ix++) {
-      //   if (results[ix].category === 'tops') this.items.push(results[ix])   
-      //   if (results[ix].category === 'bottoms') this.items.push(results[ix])
-      //   if (results[ix].category === 'footwear') this.items.push(results[ix])
-      // }
-      console.log(this.items);
     })
+  }
+
+  showDetail(id) {
+    console.log(id);
+    this.router.navigate(['/clothes', id]);
   }
 }

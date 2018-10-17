@@ -115,7 +115,7 @@ header {
   }
 }
 
-/* add-item-page */
+/* Add-item-page */
 
 .icon-indicator {
   text-align: center;
@@ -130,7 +130,7 @@ header {
   margin: -10px 30px -15px 30px;
 }
 
-/* item-detail-page */
+/* Item-detail-page */
 
 .clothes-details {
   margin: 0 30px;
@@ -156,3 +156,28 @@ header {
     font-size: 20px;
   }
 }
+
+/* Closet-page */
+.item-card-link {
+  display: inline-block;
+  height: 140px;
+  width: 100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.item-picture {
+  width: 100px;
+}
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
