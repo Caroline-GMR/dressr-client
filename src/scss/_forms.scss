@@ -1,0 +1,130 @@
+.form {
+  margin: 30px;
+}
+
+.field {
+  padding: 15px 20px;
+  font-size: 16px;
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  width: 100%;
+
+}
+.error-container{
+  height: 22px;
+}
+
+.field::placeholder {
+  color: #a3a3a3;
+}
+
+.submit {
+  background-color: #48B984;
+  border: 1px solid #48B984;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 30px;
+  display: block;
+  text-align: center;
+  margin-bottom: 8px;
+  button, a.submit {
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600; 
+  }  
+}
+
+a.submit {
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600; 
+}
+
+.field.has-error {
+  color: #48B984;
+}
+
+.validation {
+  margin: 0;
+  font-size: 12px;
+  color: #48B984;
+}
+
+.field.has-error input {
+  border: 1px solid #48B984;
+}
+
+.switch {
+  text-align: center;
+  font-size: 12px;
+  a {
+    color: #48B984
+  }
+}
+
+.radio-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin: auto -20px auto -15px;
+  .radio-btn {
+    justify-self: start;
+    padding-bottom: 15px;
+    white-space: nowrap;
+  }
+}
+
+.add-item-form {
+  h3 {
+    text-align: center;
+    position: relative;
+  }
+  .picture-field {
+    position: relative;
+    border: none;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    input {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      line-height: 30px;
+      cursor: pointer;
+    }
+    .camera {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 30px;
+    }
+    .placeholder {
+      width: 100px;
+      margin: auto;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 0; 
+      right: 0;
+    }
+
+    .imgPlaceholder {
+      width: 160px;
+      margin: auto;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 0; 
+      right: 0;
+    }
+  }
+}
+
+.is-processing {
+  opacity: 0.7;
+}

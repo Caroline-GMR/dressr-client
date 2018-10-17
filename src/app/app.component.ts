@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
       this.anon = !user;
     });
   }
-
+  
   logout() {
     this.authService.logout()
       .then(() => this.router.navigate(['/']));
@@ -37,4 +37,5 @@ export class AppComponent implements OnInit {
   handleHome() {
     this.home.emit(event);
   }
+
 }

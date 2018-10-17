@@ -1,0 +1,21 @@
+
+<img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
+<div class="clothes-details">
+  <div>
+    <img class="item-details" src="{{item.picture}}" alt="">
+  </div>
+  
+  <h2>Category</h2>
+  <div class="category-display">
+    <p class="category">{{item.category | titlecase}} </p> 
+    <p class="pipe"> | </p>
+    <p>{{item.subcategory | titlecase}}</p>
+  </div>
+  
+  <div>
+    <h2>Style</h2>
+    <p>{{item.style | titlecase}}</p>
+  </div>
+</div>
+
+

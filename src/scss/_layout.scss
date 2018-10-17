@@ -1,0 +1,188 @@
+/* Landing */
+
+.hero {
+  text-align: center;
+  img { 
+    width: 250px;
+  }
+}
+
+.auth {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 30px 40px 30px;
+  padding: 0 20px;
+  .link { 
+    font-size: 20px;
+  }
+  p {
+    height: 25px;
+    margin: 0;
+  }
+}
+
+.fake-btn {
+  background-color: #3B579D;
+  border: 1px solid #3B579D;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  margin: 40px 30px;
+}
+
+.active {
+  font-weight: 900;
+  border-bottom: 1px solid #48B984;
+  margin-bottom: 10px;
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  width: 100%;
+  left: 0;
+  padding: 15px 0;
+  background-color: white;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img {
+    width: 70px;
+  }
+}
+
+#site-main {
+  margin-top: 76px;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Profile */
+
+.profile-box {
+  background-color: #a3a3a33b;
+  border-radius: 10px;
+  margin: 30px;
+
+  h3 {
+    text-align: center;
+    font-weight: 600;
+    padding: 20px;
+  }
+}
+
+.menu-container {
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  img  {
+    width: 100%;
+    align-content: center;
+  }
+  .icon-container {
+    width: 50%;
+  }
+}
+
+.icon-container {
+  width: 25%;
+  p {
+    text-align: center;
+  }
+  .menu-icon {
+    border: 1px solid #a3a3a3;
+    border-radius: 10px;
+    text-align: center;
+    img {
+      padding: 10px;
+    }
+  }
+}
+
+/* Add-item-page */
+
+.icon-indicator {
+  text-align: center;
+  img {
+    width: 50px;;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  margin: -10px 30px -15px 30px;
+}
+
+/* Item-detail-page */
+
+.backarrow {
+  width: 25px;
+  position: fixed;
+}
+
+.clothes-details {
+  margin: 0 30px;
+  .item-details {
+    width: 230px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .category-display {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: left;
+    font-size: 20px;
+    .category {
+      font-weight: 900;
+    }
+    .pipe {
+      padding: 0 10px;
+    }
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+/* Closet-page */
+.item-card-link {
+  display: inline-block;
+  height: 140px;
+  width: 100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.item-picture {
+  width: 100px;
+}
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+

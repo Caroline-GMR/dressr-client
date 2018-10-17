@@ -1,0 +1,46 @@
+<div class="profile-box">
+  <div>
+    <img src="" alt="">
+  </div>
+  <div *ngIf="user">
+    <h3>{{user.username}}</h3>
+  </div>
+</div>
+
+<div class="menu-container">
+  <div class="icon-container">
+    <a [routerLink]="['/clothes/create']">
+      <div class="menu-icon">
+        <img src="/src/assets/images/clothes.png" alt="">
+      </div>
+    </a>
+    <p>Add</p>
+  </div>
+  
+  <div class="icon-container">
+    <a [routerLink]="['/closet']">
+      <div class="menu-icon">
+        <img src="/src/assets/images/wardrobe.png" alt="">
+      </div>
+    </a>
+    <p>Closet</p>
+  </div>
+  
+  <div class="icon-container">
+    <a [routerLink]="['/']">
+      <div class="menu-icon">
+        <img src="/src/assets/images/heart (2).png" alt="">
+      </div>
+    </a>
+    <p>Favorites</p>
+  </div>
+  
+  <div class="icon-container">
+    <a [routerLink]="['/']">
+      <div class="menu-icon">
+        <img src="/src/assets/images/coat-hanger.png" alt="">
+      </div>
+    </a>
+    <p>Outfits</p>
+  </div>
+</div>

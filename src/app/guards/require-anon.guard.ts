@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class RequireUserGuard implements CanActivate {
+export class RequireAnonGuard implements CanActivate {
 
   constructor(
     private authService: AuthService,
@@ -17,10 +17,10 @@ export class RequireUserGuard implements CanActivate {
   canActivate(): Promise<any> {
     return this.authService.me()
       .then((user) => {
-        if (user) {
+        if (!user) {
           return true;
         } else {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/profile']);
           return false;
         }
       })
