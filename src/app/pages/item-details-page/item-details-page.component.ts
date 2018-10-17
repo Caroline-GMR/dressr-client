@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import { Router } from '@angular/router';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 import {Location} from '@angular/common'
 
 @Component({
@@ -12,7 +12,7 @@ import {Location} from '@angular/common'
 export class ItemDetailsPageComponent implements OnInit {
   error = null;
   item:any = {
-    picture: "",
+    picture: '',
     category: null,
     subcategory: null,
     style: null

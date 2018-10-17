@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
-  private baseUrl = 'http://localhost:3000/item';
+  private API_URL = environment.apiUrl + '/item';
   private item: any;
 
   constructor( private httpClient: HttpClient) { }
@@ -14,7 +15,7 @@ export class ItemService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(this.baseUrl, options)
+    return this.httpClient.get(this.API_URL, options)
       .toPromise();
   }
 
@@ -22,7 +23,7 @@ export class ItemService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(this.baseUrl, data, options)
+    return this.httpClient.post(this.API_URL, data, options)
     .toPromise();
   }
 
@@ -30,7 +31,7 @@ export class ItemService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/${id}`, options)
+    return this.httpClient.get(`${this.API_URL}/${id}`, options)
       .toPromise();
   }
   

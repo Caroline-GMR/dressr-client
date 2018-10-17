@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { Router } from '@angular/router';
-import { ActivatedRoute } from "@angular/router";
-import {Location} from '@angular/common'
-
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common'
 
 import { ItemService } from '../../services/item.service';
 import { AuthService } from '../../services/auth.service';
-import { formatNumber } from '../../../../node_modules/@angular/common';
-
-
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-add-item-page',
@@ -24,7 +21,7 @@ export class AddItemPageComponent implements OnInit {
   preview = false;
 
   uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/item'
+    url: environment.apiUrl + '/item'
   });
 
   feedbackEnabled = false;
@@ -69,7 +66,7 @@ export class AddItemPageComponent implements OnInit {
     this.isFootwear = false;
 
     if(this.isTop){
-      this.category = "tops"
+      this.category = 'tops'
     }
 
   } 
@@ -81,7 +78,7 @@ export class AddItemPageComponent implements OnInit {
 
 
     if(this.isBottom){
-      this.category = "bottoms"
+      this.category = 'bottoms'
     }
   } 
 
@@ -92,7 +89,7 @@ export class AddItemPageComponent implements OnInit {
 
 
     if(this.isFootwear){
-      this.category = "footwear"
+      this.category = 'footwear'
     }
   }
 
