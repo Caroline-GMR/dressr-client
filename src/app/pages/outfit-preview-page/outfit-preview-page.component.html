@@ -2,67 +2,68 @@
 <div class="icon-indicator">
   <img src="../../../assets//images/coat-hanger.png" alt="">
 </div>
+<div class="preview-container">
+  <div class="category">
+    <div class="item-category">
+      <div class="item-card">
+      <a class="item-card-link" (dblclick)="showDetail(item._id)" [style.background-image]="'url(' + outfit.tops.picture + ')'"></a>
+      </div>
+    </div>
+  </div>
+    
+  <div class="category">
+    <div class="item-category">
+      <div class="item-card">
+        <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + outfit.bottoms.picture + ')'"></a>
+      </div>
+    </div>
+  </div>
 
-<div class="category">
-  <div class="item-category">
-    <div class="item-card">
-    <a class="item-card-link" (dblclick)="showDetail(item._id)" [style.background-image]="'url(' + outfit.tops.picture + ')'"></a>
+  <div class="category">
+    <div class="item-category">
+      <div class="item-card">
+        <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + outfit.footwear.picture + ')'"></a>
+      </div>
+    </div>
+  </div>
+    
+  <h3>Style</h3>
+  <div class="radio-form"  [ngClass]="{'has-error': feedbackEnabled && !style}">
+    <div class="radio-btn">
+      <input type="radio" id="casual" [(ngModel)]="style" name="style" value="casual" [disabled]="processing" required />
+      <label for="casual">casual</label>
+    </div>
+    <div class="radio-btn">
+      <input type="radio" id="formal" [(ngModel)]="style" name="style" value="formal" [disabled]="processing" required />
+      <label for="formal">formal</label>
+    </div>
+    <div class="radio-btn">
+      <input type="radio" id="sports" [(ngModel)]="style"name="style" value="sports" [disabled]="processing" required />
+      <label for="sports">sports</label>
+    </div>
+    <div class="radio-btn">
+      <input type="radio" id="party" [(ngModel)]="style" name="style" value="party" [disabled]="processing" required />
+      <label for="party">party</label>
+    </div>
+    <div class="radio-btn">
+      <input type="radio" id="beach" [(ngModel)]="style" name="style" value="beach" [disabled]="processing" required />
+      <label for="beach">beach</label>
+    </div>
+    <div class="radio-btn">
+      <input type="radio" id="lazy" [(ngModel)]="style" name="style" value="lazy" [disabled]="processing" required />
+      <label for="lazy">lazy</label>
+    </div>
+    <div class="error-container">
+      <p class='validation' *ngIf="feedbackEnabled && !style">Style required</p>
+    </div> 
+  </div>
+  <p>Do you want to keep this outfit?</p>
+  <div class="keeper">
+    <div class="submit">
+      <button class="negative" (click)="backClicked()" name="button" type="submit" [disabled]="processing">No</button>
+    </div>
+    <div class="submit">
+      <button (click)="submitOutfit(outfit, style)" name="button" type="submit" [disabled]="processing">Keep</button>
     </div>
   </div>
 </div>
-  
-<div class="category">
-  <div class="item-category">
-    <div class="item-card">
-      <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + outfit.bottoms.picture + ')'"></a>
-    </div>
-  </div>
-</div>
-
-<div class="category">
-  <div class="item-category">
-    <div class="item-card">
-      <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + outfit.footwear.picture + ')'"></a>
-    </div>
-  </div>
-</div>
-  
-  
-<h3>Style</h3>
-<div class="radio-form"  [ngClass]="{'has-error': feedbackEnabled && !style}">
-  <div class="radio-btn">
-    <input type="radio" id="casual" [(ngModel)]="style" name="style" value="casual" [disabled]="processing" required />
-    <label for="casual">casual</label>
-  </div>
-  <div class="radio-btn">
-    <input type="radio" id="formal" [(ngModel)]="style" name="style" value="formal" [disabled]="processing" required />
-    <label for="formal">formal</label>
-  </div>
-  <div class="radio-btn">
-    <input type="radio" id="sports" [(ngModel)]="style"name="style" value="sports" [disabled]="processing" required />
-    <label for="sports">sports</label>
-  </div>
-  <div class="radio-btn">
-    <input type="radio" id="party" [(ngModel)]="style" name="style" value="party" [disabled]="processing" required />
-    <label for="party">party</label>
-  </div>
-  <div class="radio-btn">
-    <input type="radio" id="beach" [(ngModel)]="style" name="style" value="beach" [disabled]="processing" required />
-    <label for="beach">beach</label>
-  </div>
-  <div class="radio-btn">
-    <input type="radio" id="lazy" [(ngModel)]="style" name="style" value="lazy" [disabled]="processing" required />
-    <label for="lazy">lazy</label>
-  </div>
-  <div class="error-container">
-    <p class='validation' *ngIf="feedbackEnabled && !style">Style required</p>
-  </div> 
-</div>
-<p>Do you want to keep this outfit?</p>
-<div class="submit">
-  <button (click)="backClicked()" name="button" type="submit" [disabled]="processing">No</button>
-</div>
-<div class="submit">
-  <button name="button" type="submit" [disabled]="processing">Keep</button>
-</div>
-

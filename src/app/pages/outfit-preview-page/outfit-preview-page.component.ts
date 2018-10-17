@@ -14,6 +14,8 @@ export class OutfitPreviewPageComponent implements OnInit {
   error = null;
   item:any;
   outfit:any;
+  feedbackEnabled = false;
+  processing = false;
 
   constructor(
     private itemService: ItemService,
@@ -36,6 +38,29 @@ export class OutfitPreviewPageComponent implements OnInit {
 
   backClicked() {
     this._location.back();
+  }
+
+  submitOutfit(outfit, style) {
+    this.error = '';
+    this.feedbackEnabled = true;
+    this.outfit.style = style;
+    console.log(this.outfit.style);
+    if (this.outfit.style && this.outfit) {
+      this.processing = true;
+      const data = {
+        style: this.outfit.style,
+        outfit: this.outfit
+      };
+      this.outfitPreview.saveOutfit(data)
+        .then(() => {
+          this.router.navigate(['/outfit', this.outfit._id]);
+        })
+        .catch((err) => {
+          this.error = err.error.code || 'unexpected'; // :-)
+          this.processing = false;
+          this.feedbackEnabled = false;
+        });
+    }
   }
 
 }

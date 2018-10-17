@@ -1,0 +1,27 @@
+.item-card-link {
+  display: inline-block;
+  // height: 140px;
+  // width: 100px;
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.item-picture {
+  width: 100px;
+}
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
