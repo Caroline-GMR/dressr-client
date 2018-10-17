@@ -63,7 +63,7 @@ export class AddItemPageComponent implements OnInit {
     };
   }
 
-  setCategoryTop(event) {
+  setCategoryTop() {
     this.isTop = true;
     this.isBottom = false;
     this.isFootwear = false;

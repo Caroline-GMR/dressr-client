@@ -11,8 +11,11 @@ import {Location} from '@angular/common'
 })
 export class ItemDetailsPageComponent implements OnInit {
   error = null;
-  item = {
-    picture: ""
+  item:any = {
+    picture: "",
+    category: null,
+    subcategory: null,
+    style: null
   };
 
   constructor(
