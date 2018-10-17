@@ -1,0 +1,31 @@
+<img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
+<div class="icon-indicator">
+  <img src="../../../assets//images/coat-hanger.png" alt="">
+</div>
+
+<div class="category">
+  <div class="item-category">
+    <div class="item-card">
+    <a class="item-card-link" (dblclick)="showDetail(item._id)" [style.background-image]="'url(' + outfit.tops.picture + ')'"></a>
+    </div>
+  </div>
+</div>
+  
+<div class="category">
+  <div class="item-category" *ngFor="let item of bottoms">
+    <div class="item-card">
+      <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+    </div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="item-category" *ngFor="let item of footwear">
+    <div class="item-card">
+      <a (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+    </div>
+  </div>
+</div>
+  
+  
+

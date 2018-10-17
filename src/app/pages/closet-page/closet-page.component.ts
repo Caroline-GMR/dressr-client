@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common'
+import { OutfitPreviewService } from '../../services/outfit-preview.service';
 
 @Component({
   selector: 'app-closet-page',
@@ -13,15 +14,19 @@ export class ClosetPageComponent implements OnInit {
   bottoms: Array<any>;
   footwear: Array<any>;
   config: any;
+  isSelectedTop = true;
+  outfit: any;
 
   constructor(
     private itemService: ItemService,
     private router: Router,
-    private _location: Location
+    private _location: Location,
+    private outfitPreview: OutfitPreviewService
 
   ) { }
   
   ngOnInit() {
+    this.outfit = this.outfitPreview.getOutfit();
     this.itemService.getAll()
     .then((results: Array<any>) => {
       this.tops = results.filter((item) => item.category === 'tops')
@@ -37,5 +42,14 @@ export class ClosetPageComponent implements OnInit {
 
   backClicked() {
     this._location.back();
+  }
+
+  selectedItem(item) {
+    this.outfit = this.outfitPreview.setOne(item);
+    console.log(this.outfit);
+  }
+
+  showOutfitPreview(outfit) {
+    this.router.navigate(['/outfit', 'create'], this.outfit);
   }
 }

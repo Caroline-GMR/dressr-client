@@ -40,6 +40,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ItemCategoryComponent } from './components/item-category/item-category.component';
+import { OutfitPreviewPageComponent } from './pages/outfit-preview-page/outfit-preview-page.component';
 
 // ---- Guards ---- //
 import { RequireAnonGuard } from '../app/guards/require-anon.guard';
@@ -53,10 +54,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfilePageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'clothes/create',  component: AddItemPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'clothes/:id',  component: ItemDetailsPageComponent, canActivate: [ RequireUserGuard ]  },
-  { path: 'closet',  component: ClosetPageComponent, canActivate: [ RequireUserGuard ]  }
+  { path: 'closet',  component: ClosetPageComponent, canActivate: [ RequireUserGuard ]  },
+  { path: 'outfit/create',  component: OutfitPreviewPageComponent, canActivate: [ RequireUserGuard ]  }
 
-  /* { path: 'login',  component: MovieListComponent },
-  { path: 'signup', component: MovieDetailComponent } */
 ];
 
 @NgModule({
@@ -69,7 +69,8 @@ const routes: Routes = [
     ItemCategoryComponent,
     AddItemPageComponent,
     ItemDetailsPageComponent,
-    ClosetPageComponent
+    ClosetPageComponent,
+    OutfitPreviewPageComponent
   ],
   imports: [
     BrowserModule,
