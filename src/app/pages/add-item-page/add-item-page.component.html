@@ -1,12 +1,12 @@
 <img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
 <div class="icon-indicator">
-  <img src="/src/assets/images/clothes.png" alt="">
+  <img src="../../../assets/images/clothes.png" alt="">
 </div>
 
 <div class="add-item-form">
   
   <div class="picture-field">
-    <img *ngIf="!preview" class="placeholder" src="/src/assets/images/clothes-placeholder.png" alt="">
+    <img *ngIf="!preview" class="placeholder" src="../../../assets/images/clothes-placeholder.png" alt="">
     <img class="camera" src="https://image.flaticon.com/icons/svg/159/159829.svg" alt="">
     <input id="picture" type="file" name="file" ng2FileSelect [uploader]="uploader" (change)="handleFileUpload($event)" [disabled]="processing" />
     <img *ngIf="preview && localUrl" [src]="localUrl" class="imgPlaceholder">
