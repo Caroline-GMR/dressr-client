@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import {Location} from '@angular/common'
 import { OutfitsService } from '../../services/outfits.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,7 +18,8 @@ export class OutfitDetailsComponent implements OnInit {
     private itemService: ItemService,
     private _location: Location,
     private outfitsService: OutfitsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -32,6 +33,10 @@ export class OutfitDetailsComponent implements OnInit {
           console.log(error);
         })
     })
+  }
+
+  backClicked() {
+    this.router.navigate(['/profile']);
   }
 
 }

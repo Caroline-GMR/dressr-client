@@ -33,4 +33,8 @@ export class OutfitPreviewService {
       .toPromise()
   }
 
+  clear () {
+    this.outfit = {};
+  }
+
 }

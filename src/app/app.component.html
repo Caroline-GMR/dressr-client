@@ -2,10 +2,10 @@
   <div class="container">
 
     <nav class="site-nav" *ngIf="user">
-      <a (click)="logout()">Logout</a>
       <div class="logo-home">
         <a [routerLink]="['/profile']"><img src="../assets/images/dressr logo.png" alt="dressr-logo"></a>
       </div>
+      <a (click)="logout()">Logout</a>
     </nav>
 
   </div>

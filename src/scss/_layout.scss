@@ -49,6 +49,8 @@ header {
   left: 0;
   padding: 15px 0;
   background-color: white;
+  z-index: 1;
+  
   nav {
     display: flex;
     justify-content: space-between;

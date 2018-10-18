@@ -51,6 +51,7 @@ export class OutfitPreviewPageComponent implements OnInit {
       this.processing = true;
       this.outfitPreview.saveOutfit(this.outfit)
         .then((outfit: any) => {
+          this.outfitPreview.clear();
           this.router.navigate(['/outfit', outfit._id]);
         })
         .catch((err) => {
