@@ -59,6 +59,7 @@ const routes: Routes = [
   { path: 'clothes/create',  component: AddItemPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'clothes/:id',  component: ItemDetailsPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'closet',  component: ClosetPageComponent, canActivate: [ RequireUserGuard ]  },
+  { path: 'outfit',  component: OutfitsComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'outfit/create',  component: OutfitPreviewPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'outfit/:id',  component: OutfitDetailsComponent, canActivate: [ RequireUserGuard ]  },
 
