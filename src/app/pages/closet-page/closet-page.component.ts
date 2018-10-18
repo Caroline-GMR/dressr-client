@@ -36,7 +36,6 @@ export class ClosetPageComponent implements OnInit {
   }
 
   showDetail(id) {
-    console.log(id);
     this.router.navigate(['/clothes', id]);
   }
 

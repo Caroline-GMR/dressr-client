@@ -36,7 +36,6 @@ export class OutfitPreviewPageComponent implements OnInit {
   }
 
   showDetail(id) {
-    console.log(id);
     this.router.navigate(['/clothes', id]);
   }
 
