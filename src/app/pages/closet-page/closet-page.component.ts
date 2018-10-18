@@ -48,7 +48,7 @@ export class ClosetPageComponent implements OnInit {
     this.outfit = this.outfitPreview.setOne(item);
   }
 
-  showOutfitPreview(outfit) {
+  showOutfitPreview() {
     this.router.navigate(['/outfit', 'create'], this.outfit);
   }
 }

@@ -16,6 +16,7 @@ export class OutfitPreviewPageComponent implements OnInit {
   outfit:any;
   feedbackEnabled = false;
   processing = false;
+  style:any;
 
   constructor(
     private itemService: ItemService,
@@ -43,7 +44,7 @@ export class OutfitPreviewPageComponent implements OnInit {
     this._location.back();
   }
 
-  submitOutfit(style) {
+  submitOutfit(style:any) {
     this.error = '';
     this.feedbackEnabled = true;
     this.outfit.style = style;
