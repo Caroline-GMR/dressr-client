@@ -1,8 +1,28 @@
-.icon-indicator {
+.icon-box {
+  width: 100%;
+  position: fixed;
   text-align: center;
-  img {
-    width: 50px;;
+
+  .icon-indicator {
+    text-align: center;
+    position: relative;
+    margin-top: -30px;
+    padding-right: 30px;
+
+    img {
+      width: 50px;;
+    }
   }
+}
+.add-item-form {
+  padding-top: 30px;
+}
+
+.error-container.error-upload {
+  position: absolute;
+  bottom: 0px;
+  right: 63px;
+  width: 139px;
 }
 
 .navigation {

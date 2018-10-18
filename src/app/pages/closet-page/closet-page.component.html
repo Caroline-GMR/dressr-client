@@ -1,39 +1,43 @@
+<div class="icon-box">
+  <div class="icon-indicator">
+    <img src="../../../assets/images/wardrobe.png" alt="">
+  </div>
+</div>
 <img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
-<div class="icon-indicator">
-  <img src="../../../assets/images/wardrobe.png" alt="">
-</div>
 
-<div class="category">
-  <p>Tops</p>
-  <swiper [config]="config">
-    <div class="item-category" *ngFor="let item of tops">
-      <div class="item-card" [ngClass]="{'selected': item._id === outfit.tops?._id}">
-      <a (click)="selectedItem(item)" (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
-      </div>
-    </div>
-  </swiper>
-</div>
-
-<div class="category">
-  <p>Bottoms</p>
-  <swiper [config]="config">
-    <div class="item-category" *ngFor="let item of bottoms">
-      <div class="item-card" [ngClass]="{'selected': item._id === outfit.bottoms?._id}">
+<div class="closet-container">
+  <div class="category">
+    <!-- <p>Tops</p> -->
+    <swiper [config]="config">
+      <div class="item-category" *ngFor="let item of tops">
+        <div class="item-card" [ngClass]="{'selected': item._id === outfit.tops?._id}">
         <a (click)="selectedItem(item)" (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+        </div>
       </div>
-    </div>
-  </swiper>
-</div>
+    </swiper>
+  </div>
 
-<div class="category">
-  <p>Footwear</p>
-  <swiper [config]="config">
-    <div class="item-category" *ngFor="let item of footwear">
-      <div class="item-card" [ngClass]="{'selected': item._id === outfit.footwear?._id}">
-        <a (click)="selectedItem(item)" (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+  <div class="category">
+    <!-- <p>Bottoms</p> -->
+    <swiper [config]="config">
+      <div class="item-category" *ngFor="let item of bottoms">
+        <div class="item-card" [ngClass]="{'selected': item._id === outfit.bottoms?._id}">
+          <a (click)="selectedItem(item)" (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+        </div>
       </div>
-    </div>
-  </swiper>
+    </swiper>
+  </div>
+
+  <div class="category">
+    <!-- <p>Footwear</p> -->
+    <swiper [config]="config">
+      <div class="item-category" *ngFor="let item of footwear">
+        <div class="item-card" [ngClass]="{'selected': item._id === outfit.footwear?._id}">
+          <a (click)="selectedItem(item)" (dblclick)="showDetail(item._id)" class="item-card-link" [style.background-image]="'url(' + item.picture + ')'"></a>
+        </div>
+      </div>
+    </swiper>
+  </div>
 </div>
 
 <div class="submit">

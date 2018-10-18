@@ -1,0 +1,43 @@
+<div class="icon-box">
+    <div class="icon-indicator">
+      <img src="../../../assets/images/wardrobe.png" alt="">
+    </div>
+</div>
+<img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
+  
+<app-loading *ngIf="!outfit"></app-loading>
+
+<div class="closet-container" *ngIf="outfit">
+
+  <div class="category">
+    <!-- <p>Tops</p> -->
+    <div class="item-category">
+      <div class="item-card">
+      <a class="item-card-link" [style.background-image]="'url(' + outfit.tops.picture + ')'"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="category">
+    <!-- <p>Bottoms</p> -->
+    <div class="item-category">
+      <div class="item-card">
+        <a class="item-card-link" [style.background-image]="'url(' + outfit.bottoms.picture + ')'"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="category">
+    <!-- <p>Footwear</p> -->
+    <div class="item-category">
+      <div class="item-card">
+        <a class="item-card-link" [style.background-image]="'url(' + outfit.footwear.picture + ')'"></a>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Style</h2>
+    <p>{{outfit.style | titlecase}}</p>
+  </div>
+</div>

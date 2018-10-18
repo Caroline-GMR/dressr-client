@@ -1,7 +1,10 @@
-<img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
-<div class="icon-indicator">
-  <img src="../../../assets//images/coat-hanger.png" alt="">
+<div class="icon-box">
+  <div class="icon-indicator">
+    <img src="../../../assets//images/coat-hanger.png" alt="">
+  </div>
 </div>
+<img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
+
 <div class="preview-container">
   <div class="category">
     <div class="item-category">
@@ -63,7 +66,7 @@
       <button class="negative" (click)="backClicked()" name="button" type="submit" [disabled]="processing">No</button>
     </div>
     <div class="submit">
-      <button (click)="submitOutfit(outfit, style)" name="button" type="submit" [disabled]="processing">Keep</button>
+      <button (click)="submitOutfit(style)" name="button" type="submit" [disabled]="processing">Keep</button>
     </div>
   </div>
 </div>

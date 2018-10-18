@@ -47,17 +47,20 @@ a.submit {
 }
 
 .field.has-error {
-  color: #48B984;
+  color: #da2127;
 }
 
 .validation {
   margin: 0;
   font-size: 12px;
-  color: #48B984;
+  color: #da2127;
+  &.user-incorrect {
+    text-align: center;
+  }
 }
 
 .field.has-error input {
-  border: 1px solid #48B984;
+  border: 1px solid #da2127;
 }
 
 .switch {

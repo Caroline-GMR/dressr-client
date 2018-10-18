@@ -1,9 +1,9 @@
 <div class="profile-box">
-  <div>
-    <img src="" alt="">
+  <div class="image-container">
+    <img class="image-profile" src="../../../assets/images/female-avatar-profile.png" alt="">
   </div>
-  <div *ngIf="user">
-    <h3>{{user.username}}</h3>
+  <div class="user-container" *ngIf="user">
+    <h3>{{user.username | uppercase}}</h3>
   </div>
 </div>
 
@@ -36,7 +36,7 @@
   </div>
   
   <div class="icon-container">
-    <a [routerLink]="['/']">
+    <a [routerLink]="['/outfit']">
       <div class="menu-icon">
         <img src="../../../assets/images/coat-hanger.png" alt="">
       </div>

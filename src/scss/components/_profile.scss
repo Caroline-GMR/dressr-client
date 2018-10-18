@@ -2,11 +2,32 @@
   background-color: #a3a3a33b;
   border-radius: 10px;
   margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 19px;
+
+  .image-container {
+    position: absolute;
+    text-align: center;
+    margin-top: -47px;
+
+  }
+
+  .image-profile {
+    width: 47%;
+    border-radius: 50%;
+  }
+
+  .user-container {
+    padding-top: 50px;
+    align-self: center;
+  }
 
   h3 {
+    font-size: 20px;
     text-align: center;
     font-weight: 600;
-    padding: 20px;
   }
 }
 

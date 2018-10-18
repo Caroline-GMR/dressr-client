@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
         email: this.email,
         password: this.password
       };
-      this.authService.login(data)
+      this.authService.signup(data)
         .then(() => {
           this.router.navigate(['/profile']);
         })

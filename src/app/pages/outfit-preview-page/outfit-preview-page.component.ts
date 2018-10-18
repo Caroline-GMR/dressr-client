@@ -28,7 +28,10 @@ export class OutfitPreviewPageComponent implements OnInit {
 
   ngOnInit() {
     this.outfit = this.outfitPreview.getOutfit();
-    console.log(this.outfit)
+
+    if (!this.outfit.tops || !this.outfit.bottoms || !this.outfit.footwear) {
+      this.router.navigate(['/closet']);
+    }
   }
 
   showDetail(id) {
@@ -40,23 +43,18 @@ export class OutfitPreviewPageComponent implements OnInit {
     this._location.back();
   }
 
-  submitOutfit(outfit, style) {
+  submitOutfit(style) {
     this.error = '';
     this.feedbackEnabled = true;
     this.outfit.style = style;
-    console.log(this.outfit.style);
     if (this.outfit.style && this.outfit) {
       this.processing = true;
-      const data = {
-        style: this.outfit.style,
-        outfit: this.outfit
-      };
-      this.outfitPreview.saveOutfit(data)
-        .then(() => {
-          this.router.navigate(['/outfit', this.outfit._id]);
+      this.outfitPreview.saveOutfit(this.outfit)
+        .then((outfit: any) => {
+          this.router.navigate(['/outfit', outfit._id]);
         })
         .catch((err) => {
-          this.error = err.error.code || 'unexpected'; // :-)
+          this.error = err.message|| 'unexpected'; // :-)
           this.processing = false;
           this.feedbackEnabled = false;
         });

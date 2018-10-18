@@ -37,8 +37,8 @@
     <p class="validation">There are errors in the form, please review the fields</p>
   </div>
   <div *ngIf="error" [ngSwitch]="error">
-    <p *ngSwitchCase="'not-found'" class="validaton">Username or password are incorrect</p>
-    <p *ngSwitchDefault class="validaton">There was an error, please <a (click)="submitForm(form)">try again</a></p>
+    <p *ngSwitchCase="'not-found'" class="validation user-incorrect">Username or password are incorrect</p>
+    <p *ngSwitchDefault class="validation">There was an error, please <a (click)="submitForm(form)">try again</a></p>
   </div>
 </form>
 <p class="switch">Do you already have an account? <a (click)="handleSwitch()">Login</a></p>

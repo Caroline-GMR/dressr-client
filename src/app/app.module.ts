@@ -41,12 +41,15 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ItemCategoryComponent } from './components/item-category/item-category.component';
 import { OutfitPreviewPageComponent } from './pages/outfit-preview-page/outfit-preview-page.component';
+import { LocalForecastComponent } from './components/local-forecast/local-forecast.component';
+import { OutfitsComponent } from './pages/outfits/outfits.component';
+import { OutfitDetailsComponent } from './pages/outfit-details/outfit-details.component';
 
 // ---- Guards ---- //
 import { RequireAnonGuard } from '../app/guards/require-anon.guard';
 import { RequireUserGuard } from '../app/guards/require-user.guard';
 import { InitAuthGuard } from '../app/guards/init-auth.guard';
-
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 // ---- Routes ---- //
@@ -57,7 +60,7 @@ const routes: Routes = [
   { path: 'clothes/:id',  component: ItemDetailsPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'closet',  component: ClosetPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'outfit/create',  component: OutfitPreviewPageComponent, canActivate: [ RequireUserGuard ]  },
-  { path: 'outfit/:id',  component: OutfitPreviewPageComponent, canActivate: [ RequireUserGuard ]  },
+  { path: 'outfit/:id',  component: OutfitDetailsComponent, canActivate: [ RequireUserGuard ]  },
 
 
 ];
@@ -73,7 +76,11 @@ const routes: Routes = [
     AddItemPageComponent,
     ItemDetailsPageComponent,
     ClosetPageComponent,
-    OutfitPreviewPageComponent
+    OutfitPreviewPageComponent,
+    LocalForecastComponent,
+    OutfitsComponent,
+    OutfitDetailsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +89,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     FileUploadModule,
-    SwiperModule
+    SwiperModule,
   ],
   providers: [ 
     InitAuthGuard,
