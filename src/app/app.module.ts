@@ -33,6 +33,9 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { AddItemPageComponent } from './pages/add-item-page/add-item-page.component';
 import { ItemDetailsPageComponent } from './pages/item-details-page/item-details-page.component';
 import { ClosetPageComponent } from './pages/closet-page/closet-page.component';
+import { OutfitPreviewPageComponent } from './pages/outfit-preview-page/outfit-preview-page.component';
+import { OutfitsComponent } from './pages/outfits/outfits.component';
+import { OutfitDetailsComponent } from './pages/outfit-details/outfit-details.component';
 
 // ---- Components ---- //
 import { AppRoutingModule } from './app-routing.module';
@@ -40,16 +43,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ItemCategoryComponent } from './components/item-category/item-category.component';
-import { OutfitPreviewPageComponent } from './pages/outfit-preview-page/outfit-preview-page.component';
-import { LocalForecastComponent } from './components/local-forecast/local-forecast.component';
-import { OutfitsComponent } from './pages/outfits/outfits.component';
-import { OutfitDetailsComponent } from './pages/outfit-details/outfit-details.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 // ---- Guards ---- //
 import { RequireAnonGuard } from '../app/guards/require-anon.guard';
 import { RequireUserGuard } from '../app/guards/require-user.guard';
 import { InitAuthGuard } from '../app/guards/init-auth.guard';
-import { LoadingComponent } from './components/loading/loading.component';
 
 
 // ---- Routes ---- //
@@ -61,8 +60,7 @@ const routes: Routes = [
   { path: 'closet',  component: ClosetPageComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'outfit',  component: OutfitsComponent, canActivate: [ RequireUserGuard ]  },
   { path: 'outfit/create',  component: OutfitPreviewPageComponent, canActivate: [ RequireUserGuard ]  },
-  { path: 'outfit/:id',  component: OutfitDetailsComponent, canActivate: [ RequireUserGuard ]  },
-
+  { path: 'outfit/:id',  component: OutfitDetailsComponent, canActivate: [ RequireUserGuard ]  }
 
 ];
 
@@ -78,7 +76,6 @@ const routes: Routes = [
     ItemDetailsPageComponent,
     ClosetPageComponent,
     OutfitPreviewPageComponent,
-    LocalForecastComponent,
     OutfitsComponent,
     OutfitDetailsComponent,
     LoadingComponent

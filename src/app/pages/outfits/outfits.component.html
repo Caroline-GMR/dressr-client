@@ -1,0 +1,54 @@
+<img class="backarrow" src="../../../assets/images/left-arrow.png" (click)="backClicked()">
+<div class="icon-box">
+  <div class="icon-indicator">
+    <img src="../../../assets//images/coat-hanger.png" alt="">
+  </div>
+</div>
+
+<app-loading *ngIf="!outfits"></app-loading>
+
+<h2>Style</h2>
+
+<div>
+  <div class="icon-container">
+    <div class="menu-icon">
+      <img src="../../../assets/images/flip-flops.png" alt="">
+    </div>
+    <p>Casual</p>
+  </div>
+  <div class="icon-container">
+    <div class="menu-icon">
+      <img src="../../../assets/images/tie.png" alt="">
+    </div>
+    <p>Formal</p>
+  </div>
+  <div class="icon-container">
+    <div class="menu-icon">
+      <img src="../../../assets/images/running.png" alt="">
+    </div>
+    <p>Sports</p>
+  </div>
+  <div class="icon-container">
+    <div class="menu-icon">
+      <img src="../../../assets/images/cheers.png" alt="">
+    </div>
+    <p>Party</p>
+  </div>
+  <div class="icon-container">
+    <div class="menu-icon">
+      <img src="../../../assets/images/sun-umbrella.png" alt="">
+    </div>
+    <p>Beach</p>
+  </div>
+  <div class="icon-container">
+    <div class="menu-icon">
+      <img src="../../../assets/images/face-mask.png" alt="">
+    </div>
+    <p>Lazy</p>
+  </div>
+</div>
+
+
+<!-- <ng-container *ngFor="let outfit of outfits">
+  <p>{{outfit._id}}</p>
+</ng-container> -->

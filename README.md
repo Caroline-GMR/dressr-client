@@ -12,10 +12,10 @@ Get to the back of your drawer without making a mess. Rotate your closet and nev
 -  **Logout:** As a user I can logout from the platform so no one else can use it
 -  **Add clothing** As a user I can add a piece of clothing to my virtual closet
 -  **List my clothes** As a user I want to see all my clothes in my virtual closet so that I can get inspired
--  **Search clothes** As a user I want to search clothes by category (pants, tops, coats, jackets, shoes)
 
 ## Backlog
 
+-  **Search clothes** As a user I want to search clothes by category (pants, tops, coats, jackets, shoes)
 -  **File upload** As a user I want to upload my clothes pictures so that I can storage my whole closet
 -  **Create an outfit** As a user I want to combine different clothing and save outfits to remember in the future
 -  **Add to favorites** As a user I want to add an outfit to my favorites so that I reuse it
@@ -31,10 +31,13 @@ Get to the back of your drawer without making a mess. Rotate your closet and nev
 - / - Landing page
 - /auth/signup - Signup form
 - /auth/login - Login form
-- /profile/me - my personal details and favorite
-- /clothes - clothes list
+- /profile/me - my personal details and navigation menu
 - /clothes/create - create an outfit
 - /clothes/:id -  clothes detail card with tags/categories and pic
+- /closet - clothes list
+- /outfit - list of outfits
+- /outfit/create - see the preview of the selected items and select the style before saving it
+- /outfit/:id - outfit detail page 
 - 404
 
 ## Pages
