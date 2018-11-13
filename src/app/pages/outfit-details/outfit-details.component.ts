@@ -28,6 +28,7 @@ export class OutfitDetailsComponent implements OnInit {
       this.outfitsService.getOne(params.id)
         .then((result) => {
           this.outfit = result;
+          console.log(this.outfit.tops.picture)
         })
         .catch((error) => {
           console.log(error);

@@ -7,25 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FileUploadModule } from 'ng2-file-upload';
 
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
-import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-
-
-const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: 3,
-  spaceBetween: 10,
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows : true,
-  }
-};
-
 
 // ---- Pages ---- //
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -93,10 +74,6 @@ const routes: Routes = [
     InitAuthGuard,
     RequireAnonGuard,
     RequireUserGuard,
-    {
-    provide: SWIPER_CONFIG,
-    useValue: DEFAULT_SWIPER_CONFIG
-    }
   ],
   bootstrap: [AppComponent]
 })

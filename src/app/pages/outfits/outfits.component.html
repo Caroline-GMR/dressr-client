@@ -10,45 +10,68 @@
 <h2>Style</h2>
 
 <div>
-  <div class="icon-container">
-    <div class="menu-icon">
-      <img src="../../../assets/images/flip-flops.png" alt="">
+  <swiper [config]="config">
+    <div class="icon-container">
+      <div class="menu-icon">
+        <img src="../../../assets/images/flip-flops.png" alt="">
+      </div>
+      <p>Casual</p>
     </div>
-    <p>Casual</p>
-  </div>
-  <div class="icon-container">
-    <div class="menu-icon">
-      <img src="../../../assets/images/tie.png" alt="">
+    <div class="icon-container">
+      <div class="menu-icon">
+        <img src="../../../assets/images/tie.png" alt="">
+      </div>
+      <p>Formal</p>
     </div>
-    <p>Formal</p>
-  </div>
-  <div class="icon-container">
-    <div class="menu-icon">
-      <img src="../../../assets/images/running.png" alt="">
+    <div class="icon-container">
+      <div class="menu-icon">
+        <img src="../../../assets/images/running.png" alt="">
+      </div>
+      <p>Sports</p>
     </div>
-    <p>Sports</p>
-  </div>
-  <div class="icon-container">
-    <div class="menu-icon">
-      <img src="../../../assets/images/cheers.png" alt="">
+    <div class="icon-container">
+      <div class="menu-icon">
+        <img src="../../../assets/images/cheers.png" alt="">
+      </div>
+      <p>Party</p>
     </div>
-    <p>Party</p>
-  </div>
-  <div class="icon-container">
-    <div class="menu-icon">
-      <img src="../../../assets/images/sun-umbrella.png" alt="">
+    <div class="icon-container">
+      <div class="menu-icon">
+        <img src="../../../assets/images/sun-umbrella.png" alt="">
+      </div>
+      <p>Beach</p>
     </div>
-    <p>Beach</p>
-  </div>
-  <div class="icon-container">
-    <div class="menu-icon">
-      <img src="../../../assets/images/face-mask.png" alt="">
+    <div class="icon-container">
+      <div class="menu-icon">
+        <img src="../../../assets/images/face-mask.png" alt="">
+      </div>
+      <p>Lazy</p>
     </div>
-    <p>Lazy</p>
-  </div>
+  </swiper>
 </div>
 
-
-<!-- <ng-container *ngFor="let outfit of outfits">
-  <p>{{outfit._id}}</p>
-</ng-container> -->
+<ng-container *ngFor="let outfit of outfits">
+  <div>
+    <div class="category">
+      <div class="item-category">
+        <div class="item-card">
+        <a class="item-card-link" [style.background-image]="'url(' + outfit.tops.picture + ')'"></a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <div class="item-category">
+        <div class="item-card">
+          <a class="item-card-link" [style.background-image]="'url(' + outfit.bottoms.picture + ')'"></a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <div class="item-category">
+        <div class="item-card">
+          <a class="item-card-link" [style.background-image]="'url(' + outfit.footwear.picture + ')'"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

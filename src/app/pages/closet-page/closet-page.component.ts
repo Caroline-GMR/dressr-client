@@ -3,6 +3,8 @@ import { ItemService } from '../../services/item.service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common'
 import { OutfitPreviewService } from '../../services/outfit-preview.service';
+import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
 
 @Component({
   selector: 'app-closet-page',
@@ -13,10 +15,25 @@ export class ClosetPageComponent implements OnInit {
   tops: Array<any>;
   bottoms: Array<any>;
   footwear: Array<any>;
-  config: any;
   isSelectedTop = true;
   outfit: any;
 
+  config: SwiperConfigInterface = {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 10,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows : true,
+    }
+  };
+  
+  
   constructor(
     private itemService: ItemService,
     private router: Router,
