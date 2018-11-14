@@ -30,6 +30,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { RequireAnonGuard } from '../app/guards/require-anon.guard';
 import { RequireUserGuard } from '../app/guards/require-user.guard';
 import { InitAuthGuard } from '../app/guards/init-auth.guard';
+import { WeatherComponent } from './components/weather/weather.component';
 
 
 // ---- Routes ---- //
@@ -59,7 +60,8 @@ const routes: Routes = [
     OutfitPreviewPageComponent,
     OutfitsComponent,
     OutfitDetailsComponent,
-    LoadingComponent
+    LoadingComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { OutfitsService } from '../../services/outfits.service';
 import {Location} from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { WeatherService } from '../../services/weather.service';
 
 
 @Component({
@@ -18,8 +19,8 @@ export class OutfitsComponent implements OnInit {
   footwear: any;
 
   public config: SwiperConfigInterface = {
-    slidesPerView: 3,
-    spaceBetween: 30,
+    slidesPerView: 3.5,
+    spaceBetween: 10,
     freeMode: true,
   };
 
@@ -27,17 +28,22 @@ export class OutfitsComponent implements OnInit {
     private _location: Location,
     private outfitsService: OutfitsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private weatherService: WeatherService
   ) { }
 
   ngOnInit() {
     this.outfitsService.getAll()
     .then((result: Array<any>) => {
-      this.outfits = result.slice(10, result.length -1);
+      this.outfits = result;
     })
     .catch((error) => {
       console.log(error);
     })
+  }
+
+  showDetail(id) {
+    this.router.navigate(['/outfit', id]);
   }
 
   backClicked() {

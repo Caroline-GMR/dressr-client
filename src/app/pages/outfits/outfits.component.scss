@@ -1,0 +1,14 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.closet-container {
+  padding-top: 65px;
+  .item-category {
+    height: 55px;
+    .item-card-link {
+      background-size: 31%;
+    }
+  }
+}

@@ -37,7 +37,7 @@ export class OutfitDetailsComponent implements OnInit {
   }
 
   backClicked() {
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/outfit']);
   }
 
 }

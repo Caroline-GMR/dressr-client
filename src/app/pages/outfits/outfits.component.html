@@ -7,6 +7,8 @@
 
 <app-loading *ngIf="!outfits"></app-loading>
 
+<app-weather></app-weather>
+
 <h2>Style</h2>
 
 <div>
@@ -50,28 +52,30 @@
   </swiper>
 </div>
 
+<div class="wrap">
 <ng-container *ngFor="let outfit of outfits">
-  <div>
+  <div class="closet-container" >
     <div class="category">
       <div class="item-category">
         <div class="item-card">
-        <a class="item-card-link" [style.background-image]="'url(' + outfit.tops.picture + ')'"></a>
+        <a (click)="showDetail(outfit._id)" class="item-card-link" [style.background-image]="'url(' + outfit.tops.picture + ')'"></a>
         </div>
       </div>
     </div>
     <div class="category">
       <div class="item-category">
         <div class="item-card">
-          <a class="item-card-link" [style.background-image]="'url(' + outfit.bottoms.picture + ')'"></a>
+          <a (click)="showDetail(outfit._id)" class="item-card-link" [style.background-image]="'url(' + outfit.bottoms.picture + ')'"></a>
         </div>
       </div>
     </div>
     <div class="category">
       <div class="item-category">
         <div class="item-card">
-          <a class="item-card-link" [style.background-image]="'url(' + outfit.footwear.picture + ')'"></a>
+          <a (click)="showDetail(outfit._id)" class="item-card-link" [style.background-image]="'url(' + outfit.footwear.picture + ')'"></a>
         </div>
       </div>
     </div>
   </div>
 </ng-container>
+</div>
