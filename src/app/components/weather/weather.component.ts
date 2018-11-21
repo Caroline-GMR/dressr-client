@@ -9,6 +9,7 @@ import { WeatherService } from '../../services/weather.service';
 })
 
 export class WeatherComponent implements OnInit {
+  weather;
   feedbackEnabled = false;
   error = null;
   processing = false;
@@ -26,7 +27,7 @@ export class WeatherComponent implements OnInit {
               this.geolocationPosition = position,
               this.lat = this.geolocationPosition.coords.latitude,
               this.lng = this.geolocationPosition.coords.longitude,
-              this.weatherService.getWeather(this.lat, this.lng);
+              this.weather = this.weatherService.getWeather(this.lat, this.lng);
                   console.log(position)
                   console.log(position.coords.latitude)
                   console.log(this.lng)
@@ -65,6 +66,9 @@ export class WeatherComponent implements OnInit {
         
       }
       
+    showWeather() {
+      console.log(this.weather)
+    }
   // getCurrentWeather() {
   //   this.results = this.weatherService.getWeather(this.lat, this.lng)
   //   console.log(this.results)

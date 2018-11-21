@@ -37,4 +37,11 @@ export class OutfitPreviewService {
     this.outfit = {};
   }
 
+  // addFav (data: any) {
+  //   const options = {
+  //     withCredentials: true
+  //   };
+  //   return this.httpClient.post(this.API_URL, data, options)
+  //   .toPromise()
+  // }
 }

@@ -7,10 +7,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OutfitsService {
-  private outfit: any = {};
+  // private user: any;
+  // private outfit: any = {};
   private API_URL = environment.apiUrl + '/outfit';
 
   constructor(private httpClient: HttpClient) { }
+
+  // private setUser(user?: any) {
+  //   this.user = user;
+  //   return user;
+  // }
 
   getAll() {
     const options = {

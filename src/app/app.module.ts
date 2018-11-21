@@ -32,7 +32,6 @@ import { RequireUserGuard } from '../app/guards/require-user.guard';
 import { InitAuthGuard } from '../app/guards/init-auth.guard';
 import { WeatherComponent } from './components/weather/weather.component';
 
-
 // ---- Routes ---- //
 const routes: Routes = [
   { path: '', component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
@@ -61,7 +60,7 @@ const routes: Routes = [
     OutfitsComponent,
     OutfitDetailsComponent,
     LoadingComponent,
-    WeatherComponent
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
