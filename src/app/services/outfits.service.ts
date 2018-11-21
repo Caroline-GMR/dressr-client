@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OutfitsService {
   // private user: any;
-  // private outfit: any = {};
+  private outfit: any = {};
   private API_URL = environment.apiUrl + '/outfit';
 
   constructor(private httpClient: HttpClient) { }
